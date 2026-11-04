@@ -243,3 +243,4 @@ export const TechLogo: React.FC<TechLogoProps> = ({
     </svg>
   );
 };
+
