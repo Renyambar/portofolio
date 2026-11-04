@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #FAF6F0;
+  --bg-secondary: #F2EAE0;
+  --bg-tertiary: #E8DCCF;
+  --text-primary: #141213;
+  --text-secondary: #5C5356;
+  --text-muted: #8E8286;
+  --accent-primary: #7A1C29;
+  --accent-secondary: #9E2A3B;
+  --accent-glow: rgba(122, 28, 41, 0.18);
+  --border-color: #E2D6C8;
+  --card-bg: #FFFFFF;
+  --card-hover: #F8F2E8;
+}
+
+.dark {
+  --bg-primary: #0D0B0C;
+  --bg-secondary: #171214;
+  --bg-tertiary: #221B1E;
+  --text-primary: #F6EFE6;
+  --text-secondary: #A89B9E;
+  --text-muted: #6E6266;
+  --accent-primary: #B83246;
+  --accent-secondary: #7A1C29;
+  --accent-glow: rgba(184, 50, 70, 0.28);
+  --border-color: #2A2023;
+  --card-bg: #151012;
+  --card-hover: #1E1619;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(var(--glass-bg, 255, 255, 255), 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.dark .glass-panel {
+  background: rgba(23, 18, 20, 0.75);
+}
+
+/* Noise overlay */
+.editorial-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+  opacity: 0.25;
+}
+
+/* Glow effects */
+.maroon-glow {
+  box-shadow: 0 0 50px -10px var(--accent-glow);
+}
+
+.maroon-glow-lg {
+  box-shadow: 0 0 100px -20px var(--accent-glow);
+}
