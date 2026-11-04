@@ -39,7 +39,7 @@ export const JourneySection: React.FC = () => {
         </div>
 
         {/* Editorial Timeline */}
-        <div className="relative border-l-2 border-surface-border ml-4 sm:ml-8 md:ml-32 space-y-12">
+        <div className="relative border-l-2 border-surface-border ml-4 sm:ml-8 md:ml-36 lg:ml-40 space-y-10 sm:space-y-12">
           {JOURNEY_ITEMS.map((item, idx) => {
             const Icon = typeIconMap[item.type] || Award;
             return (
@@ -49,7 +49,7 @@ export const JourneySection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="relative pl-8 sm:pl-10 group"
+                className="relative pl-6 sm:pl-10 group"
               >
                 {/* Timeline node marker */}
                 <div className="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-card-bg border-2 border-surface-border group-hover:border-accent-primary flex items-center justify-center transition-colors shadow-sm">
@@ -57,12 +57,12 @@ export const JourneySection: React.FC = () => {
                 </div>
 
                 {/* Left Period Timestamp (Desktop Layout Offset) */}
-                <div className="hidden md:block absolute -left-36 top-2 text-right w-28 font-mono text-xs font-bold text-accent-primary">
+                <div className="hidden md:block absolute -left-32 lg:-left-36 top-2 text-right w-24 lg:w-28 font-mono text-xs font-bold text-accent-primary">
                   {item.period[language]}
                 </div>
 
                 {/* Content Card */}
-                <div className="p-6 sm:p-8 rounded-3xl bg-card-bg border border-surface-border hover:border-accent-primary/60 transition-all shadow-md space-y-3 group-hover:-translate-y-0.5">
+                <div className="p-5 sm:p-8 rounded-3xl bg-card-bg border border-surface-border hover:border-accent-primary/60 transition-all shadow-md space-y-3 group-hover:-translate-y-0.5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="md:hidden font-mono text-xs font-bold text-accent-primary">
                       {item.period[language]}
@@ -95,3 +95,4 @@ export const JourneySection: React.FC = () => {
     </section>
   );
 };
+

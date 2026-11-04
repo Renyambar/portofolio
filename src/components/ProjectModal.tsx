@@ -36,7 +36,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           className="relative w-full max-w-3xl rounded-3xl bg-card-bg border border-surface-border shadow-2xl overflow-hidden z-10 max-h-[90vh] flex flex-col"
         >
           {/* Header */}
-          <div className="p-6 border-b border-surface-border flex items-start justify-between gap-4 bg-bg-secondary/50">
+          <div className="p-4 sm:p-6 border-b border-surface-border flex items-start justify-between gap-3 sm:gap-4 bg-bg-secondary/50">
             <div className="space-y-1">
               <div className="flex flex-wrap items-center gap-2">
                 {project.categories.map((cat, idx) => (
@@ -71,7 +71,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Modal Body */}
-          <div className="p-6 overflow-y-auto space-y-6 text-sm text-fg-secondary leading-relaxed">
+          <div className="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm text-fg-secondary leading-relaxed">
             {/* Overview */}
             <div>
               <h4 className="font-display font-bold text-base text-fg-primary mb-2 flex items-center gap-2">
@@ -134,10 +134,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Footer Controls */}
-          <div className="p-6 border-t border-surface-border bg-bg-secondary/50 flex flex-wrap items-center justify-between gap-4">
+          <div className="p-4 sm:p-6 border-t border-surface-border bg-bg-secondary/50 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
             {project.isNda ? (
               <div className="flex items-center gap-2 text-xs font-mono text-amber-600 dark:text-amber-400">
-                <ShieldAlert className="w-4 h-4" />
+                <ShieldAlert className="w-4 h-4 shrink-0" />
                 <span>{language === 'id' ? 'Kode Sumber Dilindungi Perjanjian Kerahasiaan (NDA)' : 'Source Code Protected Under Confidential NDA'}</span>
               </div>
             ) : project.githubUrl ? (
@@ -145,7 +145,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-accent-primary text-white text-xs font-bold hover:bg-accent-secondary transition-all shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-accent-primary text-white text-xs font-bold hover:bg-accent-secondary transition-all shadow-md"
               >
                 <GithubIcon className="w-4 h-4" />
                 <span>{language === 'id' ? 'Buka Repositori GitHub' : 'View on GitHub'}</span>
@@ -155,7 +155,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
             <button
               onClick={onClose}
-              className="ml-auto px-4 py-2 rounded-xl border border-surface-border bg-card-bg text-xs font-bold text-fg-primary hover:bg-bg-secondary transition-colors"
+              className="sm:ml-auto px-4 py-2.5 rounded-xl border border-surface-border bg-card-bg text-xs font-bold text-fg-primary hover:bg-bg-secondary transition-colors text-center"
             >
               {language === 'id' ? 'Tutup Pratinjau' : 'Close Preview'}
             </button>

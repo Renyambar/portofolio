@@ -134,19 +134,19 @@ export const WorksSection: React.FC = () => {
                 </div>
 
                 {/* Bottom Card Footer Actions */}
-                <div className="pt-6 mt-6 border-t border-surface-border flex items-center justify-between gap-4">
+                <div className="pt-5 mt-5 border-t border-surface-border flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3">
                   <button
                     onClick={() => setSelectedProject(project)}
                     className="font-mono text-xs font-bold text-fg-primary hover:text-accent-primary flex items-center gap-1.5 transition-colors"
                   >
-                    <Layers className="w-3.5 h-3.5 text-accent-primary" />
+                    <Layers className="w-3.5 h-3.5 text-accent-primary shrink-0" />
                     <span>{language === 'id' ? 'Detail Riset & Spesifikasi' : 'View Deep Specs'}</span>
                   </button>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-full xs:w-auto justify-end">
                     {project.isNda ? (
                       <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-bg-secondary border border-surface-border font-mono text-[11px] text-fg-muted font-bold">
-                        <ShieldCheck className="w-3.5 h-3.5 text-amber-500" />
+                        <ShieldCheck className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                         <span>Protected NDA</span>
                       </span>
                     ) : project.githubUrl ? (

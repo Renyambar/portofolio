@@ -73,7 +73,7 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Direct Contact Info (5 Cols) */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="p-8 rounded-3xl bg-card-bg border border-surface-border shadow-lg space-y-6">
+            <div className="p-6 sm:p-8 rounded-3xl bg-card-bg border border-surface-border shadow-lg space-y-6">
               <h3 className="font-display font-bold text-xl text-fg-primary">
                 {language === 'id' ? 'Informasi Kontak Langsung' : 'Direct Contact Info'}
               </h3>
@@ -179,7 +179,7 @@ export const ContactSection: React.FC = () => {
 
           {/* Right Column: Interactive Quick Brief Form (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-3xl bg-card-bg border border-surface-border shadow-xl space-y-6">
+            <div className="p-6 sm:p-8 md:p-10 rounded-3xl bg-card-bg border border-surface-border shadow-xl space-y-6">
               <div className="space-y-1">
                 <h3 className="font-display font-extrabold text-xl sm:text-2xl text-fg-primary">
                   {language === 'id' ? 'Kirim Brief & Mulai Diskusi' : 'Send Brief & Start a Conversation'}

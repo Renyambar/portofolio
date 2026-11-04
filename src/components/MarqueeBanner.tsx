@@ -58,3 +58,4 @@ export const MarqueeBanner: React.FC = () => {
     </section>
   );
 };
+
