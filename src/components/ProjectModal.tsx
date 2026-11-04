@@ -4,6 +4,7 @@ import { X, ExternalLink, ShieldAlert, Cpu, CheckCircle } from 'lucide-react';
 import { Project } from '../types';
 import { useLanguage } from '../context/LanguageContext';
 import { GithubIcon } from './Icons';
+import { TechLogo } from './TechLogo';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -124,9 +125,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.techStack.map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 rounded-lg bg-bg-secondary border border-surface-border text-fg-primary font-mono text-xs font-semibold"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-bg-secondary border border-surface-border text-fg-primary font-mono text-xs font-semibold"
                   >
-                    {tech}
+                    <TechLogo name={tech} size={15} colored={true} />
+                    <span>{tech}</span>
                   </span>
                 ))}
               </div>

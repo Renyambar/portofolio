@@ -61,12 +61,12 @@ export const HERO_DATA = {
   },
   floatingBadges: {
     badge1: {
-      id: '🤖 Finalis Nasional KRAI 2026',
-      en: '🤖 KRAI 2026 National Finalist',
+      id: 'Finalis Nasional KRAI 2026',
+      en: 'KRAI 2026 National Finalist',
     },
     badge2: {
-      id: '⚡ Full-Stack & Edge AI',
-      en: '⚡ Full-Stack & Edge AI',
+      id: 'Full-Stack & Edge AI',
+      en: 'Full-Stack & Edge AI',
     },
   },
   ctaButtons: {

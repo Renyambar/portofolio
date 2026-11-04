@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDownRight, Sparkles, Terminal, Award } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { HERO_DATA, QUICK_STATS, PERSONAL_INFO } from '../data/portfolioData';
+import { TechLogo } from './TechLogo';
 
 export const HeroSection: React.FC = () => {
   const { language, t } = useLanguage();
@@ -179,6 +180,44 @@ export const HeroSection: React.FC = () => {
               </div>
             </div>
           ))}
+        </motion.div>
+
+        {/* Core Tech Stack Strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-8 pt-6 border-t border-surface-border/60 flex flex-wrap items-center justify-between gap-4"
+        >
+          <div className="flex items-center gap-2 font-mono text-xs text-fg-secondary">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
+            <span className="font-bold text-fg-primary uppercase tracking-wider">
+              {language === 'id' ? 'Tumpukan Teknologi Inti:' : 'Primary Tech Stack:'}
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            {[
+              { name: 'Python', label: 'Python' },
+              { name: 'YOLOv8', label: 'YOLOv8' },
+              { name: 'ROS 2 Humble', label: 'ROS 2' },
+              { name: 'TensorRT', label: 'TensorRT' },
+              { name: 'Laravel', label: 'Laravel' },
+              { name: 'PostgreSQL', label: 'PostgreSQL' },
+              { name: 'Tailwind CSS', label: 'Tailwind' },
+              { name: 'Docker', label: 'Docker' },
+              { name: 'Linux (Ubuntu)', label: 'Ubuntu' },
+            ].map((tech, idx) => (
+              <div
+                key={idx}
+                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-bg-secondary/70 border border-surface-border text-fg-primary hover:border-accent-primary/50 hover:bg-surface-cardHover transition-all text-xs font-mono font-medium shadow-sm"
+                title={tech.name}
+              >
+                <TechLogo name={tech.name} size={15} colored={true} />
+                <span className="text-[11px] font-semibold">{tech.label}</span>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

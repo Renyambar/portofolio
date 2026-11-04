@@ -6,6 +6,7 @@ import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types';
 import { ProjectModal } from './ProjectModal';
 import { GithubIcon } from './Icons';
+import { TechLogo } from './TechLogo';
 
 type FilterCategory = 'All' | 'AI & Computer Vision' | 'Full-Stack Web' | 'Robotics & Edge AI';
 
@@ -120,14 +121,15 @@ export const WorksSection: React.FC = () => {
                     {t(project.description)}
                   </p>
 
-                  {/* Tech Stack Badges */}
+                  {/* Tech Stack Badges with Authentic Logos */}
                   <div className="pt-2 flex flex-wrap gap-1.5">
                     {project.techStack.map((tech, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-bg-secondary text-fg-primary border border-surface-border/80"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium bg-bg-secondary text-fg-primary border border-surface-border/80 hover:border-accent-primary/40 transition-colors"
                       >
-                        {tech}
+                        <TechLogo name={tech} size={13} colored={true} />
+                        <span>{tech}</span>
                       </span>
                     ))}
                   </div>

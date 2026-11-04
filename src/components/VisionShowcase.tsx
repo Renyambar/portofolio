@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { SlidersHorizontal, Activity, Zap, Cpu, CheckCircle2, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { SlidersHorizontal, Activity, CheckCircle2, AlertTriangle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { VISION_SHOWCASE_DATA } from '../data/portfolioData';
+import { TechLogo } from './TechLogo';
 
 export const VisionShowcase: React.FC = () => {
   const { language, t } = useLanguage();
-  const [sliderPos, setSliderPos] = useState<number>(65); // 0 to 100%
+  const [sliderPos, setSliderPos] = useState<number>(60);
   const [activeTab, setActiveTab] = useState<'slider' | 'side-by-side'>('slider');
 
   const raw = VISION_SHOWCASE_DATA.raw;
@@ -18,8 +19,8 @@ export const VisionShowcase: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-accent-primary font-bold">
-              <span className="w-2 h-2 rounded-full bg-accent-primary" />
-              <span>{language === 'id' ? 'RISET & INTERAKTIF' : 'INTERACTIVE RESEARCH'}</span>
+              <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
+              <span>{language === 'id' ? 'RISET OTONOM KRAI 2026' : 'KRAI 2026 AUTONOMOUS ROBOTICS'}</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-fg-primary tracking-tight">
               {language === 'id' ? 'DARI FEED MENTAH KE' : 'FROM RAW SENSOR TO'}{' '}
@@ -29,13 +30,13 @@ export const VisionShowcase: React.FC = () => {
             </h2>
             <p className="text-sm sm:text-base text-fg-secondary max-w-2xl">
               {language === 'id'
-                ? 'Simulasi pipeline optimasi Computer Vision Reny pada Robot ABUROBONEMA KRAI 2026. Geser slider untuk melihat transformasi sebelum & sesudah akselerasi INT8/TensorRT.'
-                : "Simulation of Reny's Computer Vision pipeline for the ABUROBONEMA KRAI 2026 robot. Drag the slider to witness the real-time difference between raw and INT8/TensorRT accelerated inference."}
+                ? 'Simulasi pipeline inferensi Computer Vision Reny pada robot ABUROBONEMA. Mengubah inferensi FP32 yang lambat menjadi INT8 TensorRT berkecepatan tinggi.'
+                : "Interactive simulation of Reny's Computer Vision pipeline for the ABUROBONEMA robot. Benchmarking FP32 baseline latency against INT8 TensorRT accelerated inference."}
             </p>
           </div>
 
           {/* Mode Switcher Buttons */}
-          <div className="flex items-center gap-2 p-1 rounded-xl bg-bg-secondary border border-surface-border">
+          <div className="flex items-center gap-2 p-1 rounded-xl bg-bg-secondary border border-surface-border self-start md:self-auto">
             <button
               onClick={() => setActiveTab('slider')}
               className={`px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all ${
@@ -63,105 +64,159 @@ export const VisionShowcase: React.FC = () => {
         {activeTab === 'slider' ? (
           <div className="rounded-3xl border border-surface-border bg-card-bg shadow-2xl overflow-hidden">
             {/* Top Telemetry Bar */}
-            <div className="px-4 sm:px-6 py-3.5 bg-obsidian-950 text-cream-50 border-b border-obsidian-800 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+            <div className="px-4 sm:px-6 py-3 bg-obsidian-950 text-cream-50 border-b border-obsidian-800 flex flex-wrap items-center justify-between gap-3 font-mono text-xs">
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1.5 text-emerald-400 font-bold">
                   <Activity className="w-4 h-4 animate-pulse" />
-                  <span>ROS 2 HUMBLE: ONLINE</span>
+                  <span>ROS 2 HUMBLE: /aburobo/vision_detector</span>
                 </span>
-                <span className="hidden sm:inline text-obsidian-800">|</span>
-                <span className="hidden sm:inline text-cream-300">NODE: /aburobo/vision_detector</span>
+                <span className="hidden md:inline text-obsidian-800">|</span>
+                <span className="hidden md:inline text-cream-300">TOPIC: /camera/color/image_raw</span>
               </div>
-              <div className="flex items-center gap-4">
-                <span className="text-amber-400 flex items-center gap-1">
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>3.8x ACCELERATED</span>
-                </span>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5 bg-obsidian-900 px-2.5 py-1 rounded-md border border-obsidian-800">
+                  <TechLogo name="YOLOv8" size={14} className="text-accent-primary" />
+                  <span className="text-[11px] font-bold text-cream-200">YOLOv8 + TensorRT</span>
+                </div>
                 <span className="px-2 py-0.5 rounded bg-accent-primary text-white font-bold text-[10px]">
-                  INT8 QUANTIZED
+                  INT8 QUANT
                 </span>
               </div>
             </div>
 
             {/* Interactive Viewport Area */}
-            <div className="relative h-[360px] xs:h-[420px] sm:h-[480px] md:h-[500px] w-full select-none overflow-hidden bg-obsidian-900">
-              {/* Synthetic Robot Arena Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-obsidian-950 via-[#181114] to-obsidian-950">
-                {/* Arena Grid Floor */}
-                <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#FAF6F0_1px,transparent_1px)] [background-size:20px_20px] sm:[background-size:24px_24px]" />
-                
-                {/* Synthetic Arena Elements */}
-                <div className="absolute top-[22%] left-[12%] sm:left-[20%] w-36 sm:w-48 h-44 sm:h-56 rounded-2xl border border-dashed border-white/20 bg-white/5 backdrop-blur-[2px] flex flex-col items-center justify-center p-3 sm:p-4">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl bg-accent-primary/30 flex items-center justify-center mb-2">
-                    <Cpu className="w-6 h-6 sm:w-8 sm:h-8 text-cream-100" />
-                  </div>
-                  <span className="font-mono text-[9px] sm:text-[10px] text-cream-300 text-center">ROBOT CHASSIS TARGET</span>
-                </div>
+            <div className="relative h-[380px] xs:h-[440px] sm:h-[500px] w-full select-none overflow-hidden bg-[#0A0809]">
+              {/* Synthetic Real-World Robotics Camera Field Perspective */}
+              <div className="absolute inset-0 overflow-hidden">
+                {/* Arena Grid Surface */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0F0B0D] via-[#140E11] to-[#0D090B]">
+                  {/* Perspective Floor Grid */}
+                  <div
+                    className="absolute inset-0 opacity-25"
+                    style={{
+                      backgroundImage: `
+                        linear-gradient(to right, rgba(250, 246, 240, 0.15) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(250, 246, 240, 0.15) 1px, transparent 1px)
+                      `,
+                      backgroundSize: '40px 40px',
+                    }}
+                  />
 
-                <div className="absolute top-[15%] right-[10%] sm:right-[18%] w-32 sm:w-44 h-48 sm:h-64 rounded-2xl border border-dashed border-white/20 bg-white/5 backdrop-blur-[2px] flex flex-col items-center justify-center p-3 sm:p-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-500/30 flex items-center justify-center mb-2">
-                    <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-300" />
+                  {/* Arena Tape Lines & Robot Navigation Trajectory */}
+                  <svg className="absolute inset-0 w-full h-full opacity-40 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="10%" y1="90%" x2="45%" y2="50%" stroke="#B83246" strokeWidth="2" strokeDasharray="6 4" />
+                    <line x1="90%" y1="90%" x2="65%" y2="40%" stroke="#FAF6F0" strokeWidth="2" strokeDasharray="4 4" />
+                    <circle cx="50%" cy="50%" r="90" stroke="rgba(250, 246, 240, 0.2)" strokeWidth="1.5" fill="none" />
+                    <circle cx="50%" cy="50%" r="4" fill="#B83246" />
+                  </svg>
+
+                  {/* Silo 1 Graphic */}
+                  <div className="absolute top-[28%] left-[22%] sm:left-[26%] w-24 sm:w-32 h-36 sm:h-48 rounded-xl bg-gradient-to-t from-obsidian-900 to-obsidian-800/80 border border-obsidian-700/60 shadow-xl flex flex-col items-center justify-between p-3">
+                    <div className="w-full h-2 rounded bg-accent-primary/60" />
+                    <div className="space-y-1.5 w-full">
+                      <div className="w-7 h-7 mx-auto rounded-full bg-red-600/60 border border-red-400" />
+                      <div className="w-7 h-7 mx-auto rounded-full bg-blue-600/60 border border-blue-400" />
+                    </div>
+                    <span className="font-mono text-[9px] text-cream-300">SILO #01</span>
                   </div>
-                  <span className="font-mono text-[9px] sm:text-[10px] text-cream-300 text-center">ARENA GOAL POST</span>
+
+                  {/* Goal Barrier Graphic */}
+                  <div className="absolute top-[22%] right-[16%] sm:right-[20%] w-20 sm:w-28 h-44 sm:h-56 rounded-xl bg-gradient-to-t from-obsidian-900 to-obsidian-800/80 border border-obsidian-700/60 shadow-xl flex flex-col items-center justify-between p-3">
+                    <div className="w-full h-3 rounded bg-emerald-500/60" />
+                    <div className="w-10 h-10 rounded-full bg-emerald-700/40 border border-emerald-400 flex items-center justify-center font-mono text-[10px] text-cream-100">
+                      GOAL
+                    </div>
+                    <span className="font-mono text-[9px] text-cream-300">TARGET #02</span>
+                  </div>
+
+                  {/* Ball Graphic on Floor */}
+                  <div className="absolute bottom-[20%] left-[45%] w-12 h-12 rounded-full bg-gradient-to-tr from-amber-700 to-amber-400 border border-amber-300 shadow-lg shadow-amber-500/20" />
                 </div>
               </div>
 
               {/* LAYER 1: Raw Unaccelerated Feed (Base Layer) */}
-              <div className="absolute inset-0 p-3 sm:p-6 flex flex-col justify-between pointer-events-none filter blur-[0.6px] saturate-75">
-                {/* Raw HUD info */}
-                <div className="inline-flex self-start items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-red-950/80 border border-red-500/40 text-red-200 font-mono text-[10px] sm:text-xs backdrop-blur-sm">
-                  <AlertTriangle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-red-400 shrink-0" />
-                  <span>{t(raw.badge)}: {raw.fps}</span>
+              <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between pointer-events-none filter blur-[0.8px] brightness-90">
+                {/* Camera OSD header */}
+                <div className="inline-flex self-start items-center gap-2 px-3 py-1.5 rounded-lg bg-red-950/85 border border-red-500/50 text-red-200 font-mono text-xs backdrop-blur-sm">
+                  <AlertTriangle className="w-3.5 h-3.5 text-red-400 shrink-0" />
+                  <span>{t(raw.badge)}: {raw.fps} ({raw.latency})</span>
                 </div>
 
-                <div className="max-w-[220px] xs:max-w-[280px] sm:max-w-md p-2.5 sm:p-4 rounded-xl bg-obsidian-950/90 border border-obsidian-800 text-cream-200 font-mono text-[10px] sm:text-xs space-y-1">
-                  <p className="font-bold text-red-400">{t(raw.status)}</p>
-                  <p className="text-[9px] sm:text-[11px] text-cream-400 line-clamp-2 sm:line-clamp-none">{t(raw.details)}</p>
+                <div className="max-w-[240px] xs:max-w-[280px] sm:max-w-md p-3 sm:p-4 rounded-xl bg-obsidian-950/90 border border-obsidian-800 text-cream-200 font-mono text-[10px] sm:text-xs space-y-1">
+                  <p className="font-bold text-red-400 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
+                    <span>{t(raw.status)}</span>
+                  </p>
+                  <p className="text-[10px] sm:text-[11px] text-cream-400 leading-snug">{t(raw.details)}</p>
                 </div>
               </div>
 
               {/* LAYER 2: AI Accelerated Vision HUD (Revealed via Clip Path) */}
               <div
-                className="absolute inset-0 p-3 sm:p-6 flex flex-col justify-between pointer-events-none"
+                className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-between pointer-events-none"
                 style={{
                   clipPath: `polygon(${sliderPos}% 0, 100% 0, 100% 100%, ${sliderPos}% 100%)`,
                 }}
               >
-                {/* AI HUD Overlay with Bounding Boxes */}
-                {ai.detections.map((det, idx) => (
-                  <div
-                    key={idx}
-                    className={`absolute ${det.box} border-2 rounded-lg ${det.color} transition-all pointer-events-none flex flex-col justify-between p-1 sm:p-1.5 shadow-lg shadow-maroon-900/30`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className={`px-1 py-0.2 sm:px-1.5 sm:py-0.5 rounded text-[8px] sm:text-[10px] font-mono font-bold ${det.badgeColor} truncate max-w-[70px] sm:max-w-none`}>
-                        {det.label}
-                      </span>
-                      <span className="font-mono text-[9px] sm:text-[11px] font-extrabold text-cream-50 bg-obsidian-950/80 px-1 rounded">
-                        {det.conf}
-                      </span>
-                    </div>
-                    {/* Bounding Box Corner Reticle Crosshairs */}
-                    <div className="font-mono text-[8px] sm:text-[9px] text-cream-300 flex justify-between">
-                      <span>87.6 FPS</span>
-                      <span>INT8</span>
-                    </div>
+                {/* Professional Bounding Boxes with Class and Confidence */}
+                {/* Box 1: Silo Target */}
+                <div className="absolute top-[26%] left-[21%] sm:left-[25%] w-28 sm:w-36 h-40 sm:h-52 border-2 border-accent-primary bg-accent-glow/20 rounded-lg p-1.5 flex flex-col justify-between shadow-lg shadow-maroon-900/40">
+                  <div className="flex items-center justify-between">
+                    <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-accent-primary text-white">
+                      silo_target: 98.4%
+                    </span>
+                    <span className="font-mono text-[9px] text-accent-primary font-bold bg-obsidian-950/90 px-1 rounded">
+                      ID:#01
+                    </span>
                   </div>
-                ))}
+                  {/* Reticle corner marks */}
+                  <div className="font-mono text-[8px] text-cream-300 flex justify-between bg-obsidian-950/80 px-1 py-0.5 rounded">
+                    <span>x:210 y:140</span>
+                    <span>INT8: 2.1ms</span>
+                  </div>
+                </div>
+
+                {/* Box 2: Goal Post */}
+                <div className="absolute top-[20%] right-[15%] sm:right-[19%] w-24 sm:w-32 h-48 sm:h-60 border-2 border-emerald-500 bg-emerald-950/20 rounded-lg p-1.5 flex flex-col justify-between shadow-lg shadow-emerald-900/40">
+                  <div className="flex items-center justify-between">
+                    <span className="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-emerald-600 text-white">
+                      goal_zone: 96.2%
+                    </span>
+                    <span className="font-mono text-[9px] text-emerald-400 font-bold bg-obsidian-950/90 px-1 rounded">
+                      ID:#02
+                    </span>
+                  </div>
+                  <div className="font-mono text-[8px] text-cream-300 flex justify-between bg-obsidian-950/80 px-1 py-0.5 rounded">
+                    <span>x:680 y:120</span>
+                    <span>INT8: 2.3ms</span>
+                  </div>
+                </div>
+
+                {/* Box 3: Ball */}
+                <div className="absolute bottom-[18%] left-[44%] w-14 h-14 border-2 border-amber-400 bg-amber-950/20 rounded-lg p-1 flex flex-col justify-between shadow-md">
+                  <div className="flex items-center justify-between">
+                    <span className="px-1 py-0.2 rounded text-[8px] font-mono font-bold bg-amber-500 text-obsidian-950">
+                      ball: 94.8%
+                    </span>
+                  </div>
+                  <div className="font-mono text-[8px] text-amber-300 text-right">
+                    <span>d:1.4m</span>
+                  </div>
+                </div>
 
                 {/* Top AI HUD Telemetry */}
-                <div className="inline-flex self-end items-center gap-1.5 sm:gap-2 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 font-mono text-[10px] sm:text-xs backdrop-blur-sm">
-                  <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 shrink-0" />
-                  <span>{t(ai.badge)}: {ai.fps}</span>
+                <div className="inline-flex self-end items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/85 border border-emerald-500/50 text-emerald-200 font-mono text-xs backdrop-blur-sm">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span>{t(ai.badge)}: {ai.fps} ({ai.latency})</span>
                 </div>
 
                 {/* Bottom AI Status HUD */}
-                <div className="self-end max-w-[220px] xs:max-w-[280px] sm:max-w-md p-2.5 sm:p-4 rounded-xl bg-obsidian-950/95 border border-accent-primary/60 text-cream-50 font-mono text-[10px] sm:text-xs space-y-1 shadow-2xl">
+                <div className="self-end max-w-[240px] xs:max-w-[280px] sm:max-w-md p-3 sm:p-4 rounded-xl bg-obsidian-950/95 border border-accent-primary/60 text-cream-50 font-mono text-[10px] sm:text-xs space-y-1 shadow-2xl">
                   <div className="flex items-center justify-between text-accent-primary font-bold">
                     <span className="truncate">{t(ai.status)}</span>
                     <span className="text-emerald-400 shrink-0 ml-1">{ai.speedup}</span>
                   </div>
-                  <p className="text-[9px] sm:text-[11px] text-cream-300 line-clamp-2 sm:line-clamp-none">{t(ai.details)}</p>
+                  <p className="text-[10px] sm:text-[11px] text-cream-300 leading-snug">{t(ai.details)}</p>
                 </div>
               </div>
 
@@ -188,10 +243,10 @@ export const VisionShowcase: React.FC = () => {
             </div>
 
             {/* Bottom Comparison Metrics Bar */}
-            <div className="p-4 sm:p-6 bg-bg-secondary grid grid-cols-2 md:grid-cols-4 gap-4 text-center border-t border-surface-border">
+            <div className="p-4 sm:p-6 bg-bg-secondary grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center border-t border-surface-border">
               <div className="space-y-1">
                 <span className="font-mono text-[10px] text-fg-muted uppercase">Frame Rate (FPS)</span>
-                <div className="font-display text-lg sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
+                <div className="font-display text-base sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
                   <span className="line-through text-red-500/70 text-sm">18 FPS</span>
                   <span>→</span>
                   <span className="text-emerald-600 dark:text-emerald-400">87.6 FPS</span>
@@ -200,7 +255,7 @@ export const VisionShowcase: React.FC = () => {
 
               <div className="space-y-1">
                 <span className="font-mono text-[10px] text-fg-muted uppercase">Inference Latency</span>
-                <div className="font-display text-lg sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
+                <div className="font-display text-base sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
                   <span className="line-through text-red-500/70 text-sm">54.2 ms</span>
                   <span>→</span>
                   <span className="text-emerald-600 dark:text-emerald-400">11.4 ms</span>
@@ -209,7 +264,7 @@ export const VisionShowcase: React.FC = () => {
 
               <div className="space-y-1">
                 <span className="font-mono text-[10px] text-fg-muted uppercase">Precision Format</span>
-                <div className="font-display text-lg sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
+                <div className="font-display text-base sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
                   <span className="line-through text-fg-muted text-sm">FP32</span>
                   <span>→</span>
                   <span className="text-accent-primary">INT8 Quant</span>
@@ -218,7 +273,7 @@ export const VisionShowcase: React.FC = () => {
 
               <div className="space-y-1">
                 <span className="font-mono text-[10px] text-fg-muted uppercase">VRAM / RAM Footprint</span>
-                <div className="font-display text-lg sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
+                <div className="font-display text-base sm:text-xl font-extrabold text-fg-primary flex items-center justify-center gap-1.5">
                   <span className="line-through text-red-500/70 text-sm">382 MB</span>
                   <span>→</span>
                   <span className="text-emerald-600 dark:text-emerald-400">98 MB (-74%)</span>

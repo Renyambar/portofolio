@@ -13,7 +13,7 @@ export const MarqueeBanner: React.FC = () => {
               className="inline-flex items-center mx-4 font-display font-extrabold text-sm sm:text-base tracking-wider uppercase text-fg-primary"
             >
               <span>{text}</span>
-              <span className="mx-4 text-accent-primary font-bold">✦</span>
+              <span className="mx-4 text-accent-primary font-bold">◆</span>
             </span>
           ))}
         </div>
@@ -24,7 +24,7 @@ export const MarqueeBanner: React.FC = () => {
               className="inline-flex items-center mx-4 font-display font-extrabold text-sm sm:text-base tracking-wider uppercase text-fg-primary"
             >
               <span>{text}</span>
-              <span className="mx-4 text-accent-primary font-bold">✦</span>
+              <span className="mx-4 text-accent-primary font-bold">◆</span>
             </span>
           ))}
         </div>
