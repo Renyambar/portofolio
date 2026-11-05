@@ -3,75 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #FAF6F0;
-  --bg-secondary: #F2EAE0;
-  --bg-tertiary: #E8DCCF;
-  --text-primary: #141213;
-  --text-secondary: #5C5356;
-  --text-muted: #8E8286;
-  --accent-primary: #7A1C29;
-  --accent-secondary: #9E2A3B;
-  --accent-glow: rgba(122, 28, 41, 0.18);
-  --border-color: #E2D6C8;
-  --card-bg: #FFFFFF;
-  --card-hover: #F8F2E8;
+  /* LIGHT MODE (Default Nutlope/Hallmark Material) */
+  --bg-primary: #FAF7F2;
+  --bg-secondary: #F4EFEB;
+  --bg-card: #FFFFFF;
+  --text-primary: #181616;
+  --text-secondary: #5C5552;
+  --text-muted: #8A817D;
+  --accent-primary: #7C1D2D;
+  --accent-hover: #631623;
+  --border-color: #E6DFD5;
+  --card-border: #E6DFD5;
+  --arch-bg: #EFE8DF;
 }
 
 .dark {
-  --bg-primary: #0D0B0C;
-  --bg-secondary: #171214;
-  --bg-tertiary: #221B1E;
-  --text-primary: #F6EFE6;
-  --text-secondary: #A89B9E;
-  --text-muted: #6E6266;
-  --accent-primary: #B83246;
-  --accent-secondary: #7A1C29;
-  --accent-glow: rgba(184, 50, 70, 0.28);
-  --border-color: #2A2023;
-  --card-bg: #151012;
-  --card-hover: #1E1619;
+  /* DARK MODE */
+  --bg-primary: #121111;
+  --bg-secondary: #161515;
+  --bg-card: #1A1818;
+  --text-primary: #F4EFEA;
+  --text-secondary: #A39B98;
+  --text-muted: #736B68;
+  --accent-primary: #A8283D;
+  --accent-hover: #BE2E46;
+  --border-color: #2C2727;
+  --card-border: #2C2727;
+  --arch-bg: #231F20;
 }
 
-/* Custom Scrollbar */
+/* Minimalist Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border-color);
-  border-radius: 9999px;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-primary);
 }
 
-/* Glassmorphism utility */
-.glass-panel {
-  background: rgba(var(--glass-bg, 255, 255, 255), 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-.dark .glass-panel {
-  background: rgba(23, 18, 20, 0.75);
+body {
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.65;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
 }
 
-/* Noise overlay */
-.editorial-grid {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
-  opacity: 0.25;
+h1, h2, h3, h4 {
+  color: var(--text-primary);
 }
-
-/* Glow effects */
-.maroon-glow {
-  box-shadow: 0 0 50px -10px var(--accent-glow);
-}
-
-.maroon-glow-lg {
-  box-shadow: 0 0 100px -20px var(--accent-glow);
-}
-

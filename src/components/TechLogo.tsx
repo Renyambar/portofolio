@@ -235,6 +235,52 @@ export const TechLogo: React.FC<TechLogoProps> = ({
     );
   }
 
+  // Vercel
+  if (norm.includes('vercel')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill="currentColor">
+        <path d="M12 1L24 22H0L12 1Z" />
+      </svg>
+    );
+  }
+
+  // MySQL
+  if (norm.includes('mysql')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill={colored ? '#4479A1' : 'currentColor'}>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5h-2v-5h2v5zm0-7h-2V7.5h2V9.5z" />
+      </svg>
+    );
+  }
+
+  // C / C++
+  if (norm.includes('c++') || norm.includes('c/c++')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill={colored ? '#00599C' : 'currentColor'}>
+        <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 5h2v4h4v2h-4v4h-2v-4h-4v-2h4V7z" />
+      </svg>
+    );
+  }
+
+  // HTML / CSS / Web
+  if (norm.includes('html') || norm.includes('css')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill={colored ? '#E34F26' : 'currentColor'}>
+        <path d="M4 2l1.6 18 6.4 2 6.4-2L20 2H4zm13.3 5.4l-.3 3.6h-5.2v2.7h4.9l-.4 4.5-4.3 1.2v-1.9l2.7-.8.2-1.9H9.4l-.2-2h5.5l.2-2.1H9.1L8.8 5.4h8.5z" />
+      </svg>
+    );
+  }
+
+  // Postman
+  if (norm.includes('postman')) {
+    return (
+      <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill={colored ? '#FF6C37' : 'currentColor'}>
+        <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
+        <path d="M12 6l4 6h-8l4-6z" fill="currentColor" />
+      </svg>
+    );
+  }
+
   // Default clean code icon
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

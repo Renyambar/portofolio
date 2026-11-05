@@ -1,733 +1,267 @@
-import { Project, SkillCategory, WorkflowStep, JourneyItem, StatItem } from '../types';
+import { ExperienceItem, ProjectItem, SkillCategory } from '../types';
 
 export const PERSONAL_INFO = {
-  name: 'RENY AMBARWATI',
-  logo: 'MINIPAOO.',
-  tagline: 'RENY AMBARWATI',
-  domain: 'minipaoo.web.id',
-  email: 'ambarwatireny73@gmail.com',
-  github: 'https://github.com/Renyambar',
-  linkedin: 'https://linkedin.com/in/renyambarwati',
-  location: {
-    id: 'Malang, Jawa Timur, Indonesia',
-    en: 'Malang, East Java, Indonesia',
+  name: 'Reny Ambarwati',
+  nickname: 'minipaoo',
+  brand: 'minipaoo.',
+  role: {
+    id: 'Full-Stack Web Developer & Computer Vision Engineer',
+    en: 'Full-Stack Web Developer & Computer Vision Engineer',
   },
-  whatsapp: '6285798475896',
-  cvUrl: '/CV_Reny_Ambarwati.pdf',
-  profileImage: '/profile.jpg',
+  introParagraph: {
+    id: 'Mahasiswa D4 Teknik Informatika Politeknik Negeri Malang (IPK: 3.70/4.00) dengan keahlian rekayasa web skala produksi dan akselerasi computer vision pada sistem otonom.',
+    en: 'Informatics Engineering undergraduate at Politeknik Negeri Malang (GPA: 3.70/4.00) engineering production-grade web systems and accelerating real-time computer vision on autonomous robotics.',
+  },
+  cvGdriveUrl: 'https://drive.google.com/file/d/ISI_LINK_GDRIVE_CV_DISINI/view?usp=sharing',
+  profileImage: '/profile.png',
+  email: 'ambarwatireny73@gmail.com',
+  whatsappNumber: '+62 857-9847-5896',
+  whatsappUrl: 'https://wa.me/6285798475896',
+  githubUrl: 'https://github.com/Renyambar',
+  githubHandle: 'github.com/Renyambar',
+  linkedinUrl: 'https://linkedin.com/in/renyambarwati',
+  linkedinHandle: 'linkedin.com/in/renyambarwati',
+  domain: 'minipaoo.web.id',
 };
 
 export const NAV_LINKS = [
-  {
-    href: '#works',
-    number: '01',
-    label: { id: 'Karya', en: 'Works' },
-  },
-  {
-    href: '#about',
-    number: '02',
-    label: { id: 'Keahlian', en: 'Expertise' },
-  },
-  {
-    href: '#journey',
-    number: '03',
-    label: { id: 'Perjalanan', en: 'Journey' },
-  },
-  {
-    href: '#contact',
-    number: '04',
-    label: { id: 'Kontak', en: 'Contact' },
-  },
+  { href: '#about', label: { id: 'Tentang', en: 'About' } },
+  { href: '#experience', label: { id: 'Pengalaman', en: 'Experience' } },
+  { href: '#projects', label: { id: 'Proyek', en: 'Projects' } },
+  { href: '#skills', label: { id: 'Keahlian', en: 'Skills' } },
+  { href: '#contact', label: { id: 'Kontak', en: 'Contact' } },
 ];
 
-export const HERO_DATA = {
-  statusPill: {
-    id: 'BERSEDIA UNTUK KOLABORASI',
-    en: 'AVAILABLE FOR COLLABORATION',
-  },
-  greeting: {
-    id: 'Halo, saya',
-    en: "Hello, I'm",
-  },
-  name: 'RENY AMBARWATI',
-  subHeadline: 'FULL-STACK WEB DEVELOPER & COMPUTER VISION ENGINEER',
-  tagline: {
-    id: 'Membangun sistem web yang skalabel dan visi cerdas untuk mesin otonom.',
-    en: 'Engineering scalable web ecosystems and real-time intelligence for autonomous systems.',
-  },
-  description: {
-    id: 'Mahasiswa Semester 5 Sarjana Terapan Teknik Informatika di Politeknik Negeri Malang (IPK 3.70/4.00). Menggabungkan rekayasa web (Laravel, PostgreSQL) dengan kecerdasan buatan real-time (YOLOv8, ROS 2, Edge AI Optimization).',
-    en: '5th-Semester Informatics Engineering Undergraduate at Politeknik Negeri Malang (GPA 3.70/4.00). Bridging robust full-stack web architecture (Laravel, PostgreSQL) with edge-optimized computer vision (YOLOv8, ROS 2).',
-  },
-  floatingBadges: {
-    badge1: {
-      id: 'Finalis Nasional KRAI 2026',
-      en: 'KRAI 2026 National Finalist',
-    },
-    badge2: {
-      id: 'Full-Stack & Edge AI',
-      en: 'Full-Stack & Edge AI',
-    },
-  },
-  ctaButtons: {
-    primary: {
-      id: 'Lihat Karya Unggulan',
-      en: 'Explore Works',
-    },
-    secondary: {
-      id: 'Mulai Kolaborasi',
-      en: "Let's Connect",
-    },
-  },
+export const ABOUT_TEXT = {
+  id: 'Mahasiswa semester 5 D4 Teknik Informatika di Politeknik Negeri Malang (IPK: 3.70/4.00) dengan fokus pada Full-Stack Web Development, Computer Vision, dan Machine Learning. Di bidang web, saya membangun aplikasi end-to-end menggunakan PHP (Laravel), Tailwind CSS, dan PostgreSQL. Di bidang AI dan robotika, saya tergabung di divisi software tim robotika ABUROBONEMA (Finalis Nasional KRAI 2026), menangani sistem deteksi objek YOLOv8, integrasi ROS 2 Humble, tampilan kontrol HMI, hingga optimasi model (TensorRT, NCNN, OpenVINO INT8) pada edge device. Selain itu, saya juga terbiasa menggunakan Python, Data Warehouse (ETL Pentaho), serta Power BI.',
+  en: 'Informatics Engineering student at Politeknik Negeri Malang (Semester 5, GPA: 3.70/4.00) focusing on Full-Stack Web Development, Computer Vision, and Machine Learning. In web development, I build end-to-end applications using PHP (Laravel), Tailwind CSS, and PostgreSQL. In Computer Vision and Robotics, I am part of the software division at ABUROBONEMA (KRAI 2026 National Finalist), handling YOLOv8 object detection, ROS 2 Humble integration, custom HMI control displays, and edge model optimization (TensorRT, NCNN, OpenVINO INT8). Beyond web and vision, I also work with Python, Data Warehousing (Pentaho ETL), and Power BI.',
 };
 
-export const QUICK_STATS: StatItem[] = [
+export const EXPERIENCES: ExperienceItem[] = [
   {
-    value: '3.70 / 4.00',
-    label: {
-      id: 'IPK Saat Ini',
-      en: 'Current GPA',
+    id: 'research-assistant-ai',
+    role: {
+      id: 'Research Assistant – Computer Vision & Machine Learning',
+      en: 'Research Assistant – Computer Vision & Machine Learning',
     },
-    sublabel: {
+    institution: {
       id: 'Politeknik Negeri Malang',
       en: 'Politeknik Negeri Malang',
     },
-  },
-  {
-    value: '5+',
-    label: {
-      id: 'Proyek Produksi & Riset',
-      en: 'Production & Research Projects',
+    period: {
+      id: '2026 – Sekarang',
+      en: '2026 – Present',
     },
-    sublabel: {
-      id: 'Web & Kecerdasan Buatan',
-      en: 'Web & Computer Vision',
+    badge: {
+      id: 'Proyek Riset NDA',
+      en: 'NDA Research Project',
     },
-  },
-  {
-    value: 'Nasional',
-    label: {
-      id: 'Finalis KRAI 2026',
-      en: 'National Finalist KRAI 2026',
-    },
-    sublabel: {
-      id: 'Tim Robotika ABUROBONEMA',
-      en: 'ABUROBONEMA Robotics Team',
+    isNda: true,
+    description: {
+      id: 'Terlibat dalam Program Hilirisasi Riset 2026: "Sistem Early Warning terhadap Perilaku Pegawai Menggunakan Analisis Video Berbasis Kecerdasan Buatan pada Command Center" (Proyek NDA). Menyiapkan pipeline dataset video pengawasan, melakukan anotasi objek/perilaku secara presisi menggunakan Label Studio dan Roboflow, serta menjalankan eksperimen training dan evaluasi model Deep Learning di Google Colab untuk deteksi real-time.',
+      en: 'Involved in the 2026 Applied Research Downstream Program: "AI-Based Video Analytics Early Warning System for Employee Behavior Monitoring in Command Centers" (Project under NDA). Built surveillance video dataset pipelines, performed high-precision annotation using Label Studio and Roboflow, and conducted deep learning model training and evaluation on Google Colab for real-time video inference.',
     },
   },
   {
-    value: '2 Bidang',
-    label: {
-      id: 'Spesialisasi Inti',
-      en: 'Dual Core Specialization',
+    id: 'aburobonema-software',
+    role: {
+      id: 'Anggota Divisi Software – Computer Vision & Edge Deployment',
+      en: 'Software Division Member – Computer Vision & Edge Deployment',
     },
-    sublabel: {
-      id: 'Full-Stack Web & Computer Vision',
-      en: 'Full-Stack Web & Computer Vision',
+    institution: {
+      id: 'Tim Robotika ABUROBONEMA (Polinema)',
+      en: 'ABUROBONEMA Robotics Team (Polinema)',
+    },
+    period: {
+      id: 'Agu 2025 – Sekarang',
+      en: 'Aug 2025 – Present',
+    },
+    badge: {
+      id: 'Finalis Nasional KRAI 2026',
+      en: 'KRAI 2026 National Finalist',
+    },
+    repoUrl: 'https://github.com/Renyambar/abu-riset',
+    description: {
+      id: 'Merancang sistem deteksi objek dan estimasi posisi real-time pada robot otonom menggunakan YOLOv8 dan OpenCV (dataset dikelola di Roboflow, dilatih di Google Colab) yang terintegrasi dengan ROS 2 Humble. Mengembangkan antarmuka kontrol (HMI) untuk pemantauan kamera di lapangan, serta mengatasi keterbatasan perangkat keras pada edge device melalui konversi TensorRT, migrasi NCNN, kuantisasi OpenVINO INT8, dan model pruning agar FPS tetap tinggi dan stabil.',
+      en: 'Designed and deployed real-time object detection for autonomous robots using YOLOv8 and OpenCV integrated with ROS 2 Humble. Developed a custom HMI control display for live field monitoring, and solved edge hardware bottlenecks by converting and benchmarking models across TensorRT, NCNN, and OpenVINO INT8 quantization with model pruning to maintain high, stable FPS.',
     },
   },
 ];
 
-export const MARQUEE_TICKERS = {
-  ticker1: [
-    'FULL-STACK WEB DEVELOPER',
-    'COMPUTER VISION ENGINEER',
-    'ROBOTICS SOFTWARE (ROS 2)',
-    'EDGE AI OPTIMIZATION',
-    'YOLOV8 / YOLOV10 INFERENCE',
-    'TENSORRT & OPENVINO INT8',
-    'LARAVEL & POSTGRESQL ARCHITECTURE',
-  ],
-  ticker2: [
-    'AVAILABLE FOR INTERNSHIP',
-    'OPEN FOR COLLABORATION',
-    'BASED IN MALANG, INDONESIA',
-    'IPK 3.70 / 4.00 POLINEMA',
-    'KRAI 2026 NATIONAL FINALIST',
-    'PRODUCTION-READY ENGINEERING',
-  ],
-};
-
-export const PROJECTS: Project[] = [
-  {
-    id: 'aburobonema',
-    title: 'ABUROBONEMA — Autonomous Robot Computer Vision & HMI (KRAI 2026)',
-    categories: ['Robotics & Edge AI', 'AI & Computer Vision'],
-    role: {
-      id: 'Software Engineer (Computer Vision & Edge Deployment)',
-      en: 'Software Engineer (Computer Vision & Edge Deployment)',
-    },
-    achievementBadge: {
-      id: '🏆 Finalis Tingkat Nasional KRAI 2026',
-      en: '🏆 National Finalist KRAI 2026',
-    },
-    githubUrl: 'https://github.com/Renyambar/abu-riset',
-    techStack: [
-      'YOLOv8',
-      'ROS 2 Humble',
-      'TensorRT',
-      'NCNN',
-      'OpenVINO INT8',
-      'Roboflow',
-      'Google Colab',
-      'Python',
-    ],
-    description: {
-      id: 'Merancang sistem deteksi objek real-time pada robot otonom menggunakan YOLOv8 terintegrasi ROS 2 Humble serta membangun antarmuka kontrol HMI. Mengoptimasi FPS pada perangkat keras terbatas melalui konversi TensorRT, migrasi NCNN, kuantisasi OpenVINO INT8, dan model pruning.',
-      en: 'Engineered real-time object detection for autonomous robots using YOLOv8 integrated with ROS 2 Humble alongside a custom HMI control display. Maximized edge FPS via TensorRT conversion, NCNN migration, OpenVINO INT8 quantization, and model pruning.',
-    },
-    fullDetails: {
-      id: {
-        overview:
-          'Pengembangan subsistem persepsi visual dan sistem antarmuka manusia-mesin (HMI) untuk robot otonom kontestan Kontes Robot ABU Indonesia (KRAI) 2026 tingkat nasional.',
-        highlights: [
-          'Integrasi node pub/sub ROS 2 Humble untuk komunikasi latensi rendah antara sensor kamera dan kontrol aktuator.',
-          'Penerapan optimasi pipeline INT8 dengan OpenVINO dan engine TensorRT yang meningkatkan frame rate deteksi dari 19 FPS menjadi 87+ FPS.',
-          'Dataset kustom dengan augmentasi presisi pada Roboflow dan validasi silang pada kondisi pencahayaan dinamis arena pertandingan.',
-        ],
-        metrics: ['87+ FPS on Edge', '3.8x Speedup via INT8', 'Sub-15ms Latency'],
-      },
-      en: {
-        overview:
-          'Development of the visual perception subsystem and Human-Machine Interface (HMI) for the autonomous robot competing at the National ABU Robocon Indonesia (KRAI) 2026.',
-        highlights: [
-          'Integrated low-latency ROS 2 Humble publisher/subscriber nodes between stereo cameras and actuator controllers.',
-          'Implemented INT8 pipeline optimization with OpenVINO and TensorRT engines, boosting detection throughput from 19 FPS to 87+ FPS.',
-          'Custom dataset augmentation on Roboflow with rigorous cross-validation across dynamic arena lighting conditions.',
-        ],
-        metrics: ['87+ FPS on Edge', '3.8x Speedup via INT8', 'Sub-15ms Latency'],
-      },
-    },
-  },
-  {
-    id: 'early-warning-ai',
-    title: 'Sistem Early Warning Perilaku Pegawai Berbasis AI (Program Hilirisasi Riset 2026)',
-    categories: ['AI & Computer Vision'],
-    role: {
-      id: 'Research Assistant (Computer Vision & Machine Learning)',
-      en: 'Research Assistant (Computer Vision & Machine Learning)',
-    },
-    achievementBadge: {
-      id: '🔒 Proyek Riset Hilirisasi Polinema (Under NDA)',
-      en: '🔒 Polinema Downstreaming Research (Under NDA)',
-    },
-    isNda: true,
-    techStack: [
-      'Python',
-      'Deep Learning',
-      'Video Analytics',
-      'Label Studio',
-      'Roboflow',
-      'Google Colab',
-      'OpenCV',
-    ],
-    description: {
-      id: 'Terlibat dalam penelitian dosen untuk sistem peringatan dini perilaku pegawai berbasis analisis video kecerdasan buatan pada Command Center. Bertanggung jawab atas persiapan dataset pengawasan, anotasi presisi tinggi di Label Studio & Roboflow, serta pelatihan dan evaluasi model Deep Learning di Google Colab.',
-      en: 'Contributed to an institutional AI video analytics research project for command center employee behavior early warning. Managed surveillance dataset pipelines, high-precision labeling via Label Studio & Roboflow, and deep learning model training on Google Colab.',
-    },
-    fullDetails: {
-      id: {
-        overview:
-          'Penelitian hilirisasi institusional di Politeknik Negeri Malang untuk pemantauan cerdas berbasis AI pada infrastruktur Command Center modern.',
-        highlights: [
-          'Penyusunan dataset video multi-kamera berkualitas tinggi dengan standardisasi anotasi di Label Studio & Roboflow.',
-          'Pelatihan model deep learning pendeteksi anomali perilaku kerja dengan akurasi klasifikasi tinggi.',
-          'Pengawasan etika data dan kepatuhan privasi sesuai regulasi institusional.',
-        ],
-        metrics: ['96.2% Precision', 'Multi-Stream CCTV Feed', 'NDA Compliant'],
-      },
-      en: {
-        overview:
-          'Institutional downstreaming research at Politeknik Negeri Malang for smart AI surveillance integrated into modern Command Center operations.',
-        highlights: [
-          'Constructed robust multi-angle CCTV surveillance video datasets with strict annotation standards in Label Studio & Roboflow.',
-          'Trained anomaly detection deep learning models achieving top-tier classification accuracy.',
-          'Ensured rigorous data ethics, privacy compliance, and confidential protocol adherence under NDA.',
-        ],
-        metrics: ['96.2% Precision', 'Multi-Stream CCTV Feed', 'NDA Compliant'],
-      },
-    },
-  },
+export const PROJECTS: ProjectItem[] = [
   {
     id: 'skillkul',
-    title: 'SkillKul — Platform Marketplace Jasa Freelance Mahasiswa',
-    categories: ['Full-Stack Web'],
-    role: {
-      id: 'Full-Stack Web Developer',
-      en: 'Full-Stack Web Developer',
+    title: {
+      id: 'SkillKul – Platform Marketplace Jasa Freelance Mahasiswa',
+      en: 'SkillKul – Student Freelance Service Marketplace',
     },
-    achievementBadge: {
-      id: '💼 Project-Based Learning (PBL)',
-      en: '💼 Project-Based Learning (PBL)',
+    subtitle: {
+      id: 'Proyek Project-Based Learning (PBL)',
+      en: 'Project-Based Learning (PBL)',
+    },
+    year: '2026',
+    techStack: ['Laravel', 'Tailwind CSS', 'PostgreSQL', 'Midtrans REST API', 'DomPDF'],
+    description: {
+      id: 'Aplikasi web marketplace untuk mempertemukan mahasiswa penyedia jasa freelance dengan klien. Membangun sistem full-stack mencakup autentikasi multi-peran, katalog jasa, pelacakan pesanan, integrasi pembayaran otomatis via REST API Midtrans, serta pencetakan invoice dan portofolio PDF otomatis menggunakan DomPDF.',
+      en: 'Full-stack web marketplace connecting university student freelancers with clients. Built multi-role authentication, service catalogs, order workflows, automated real-time payment verification via Midtrans REST API, and dynamic PDF invoice generation using DomPDF.',
     },
     githubUrl: 'https://github.com/Renyambar/Skillkul_PBL',
-    techStack: [
-      'PHP',
-      'Laravel',
-      'Tailwind CSS',
-      'PostgreSQL',
-      'Midtrans API',
-      'DomPDF',
-      'REST API',
-    ],
-    description: {
-      id: 'Membangun aplikasi web marketplace end-to-end yang mempertemukan freelancer mahasiswa dengan klien. Dilengkapi manajemen pesanan, integrasi pembayaran otomatis real-time via REST API Midtrans Payment Gateway, serta pencetakan invoice/laporan PDF otomatis dengan DomPDF.',
-      en: 'Built an end-to-end student freelance marketplace web platform using Laravel, Tailwind CSS, and PostgreSQL. Integrated Midtrans Payment Gateway REST API for automated real-time payment verification and DomPDF for dynamic invoice generation.',
-    },
-    fullDetails: {
-      id: {
-        overview:
-          'Platform marketplace karya mahasiswa yang dirancang untuk memberdayakan talenta kampus dalam menawarkan jasa digital secara profesional, transparan, dan terverifikasi.',
-        highlights: [
-          'Integrasi Midtrans Snap & Webhook REST API untuk konfirmasi pembayaran otomatis (QRIS, VA Bank, E-Wallet).',
-          'Database PostgreSQL terstruktur dengan indexing optimal untuk query gig, rating, dan riwayat transaksi finansial.',
-          'Generator invoice transaksi dan laporan ringkasan otomatis menggunakan DomPDF.',
-        ],
-        metrics: ['100% Automated Webhooks', 'Responsive Mobile-First UI', 'PostgreSQL Relational DB'],
-      },
-      en: {
-        overview:
-          'A student freelance service marketplace designed to empower campus talent to showcase digital skills and monetize gigs with verified client protection.',
-        highlights: [
-          'Engineered Midtrans Snap & Webhook REST API integration for automated real-time payment validation (QRIS, Virtual Accounts, E-Wallets).',
-          'Structured PostgreSQL schema with optimized indexing for gigs, client ratings, and ledger transactions.',
-          'Automated dynamic PDF invoice generation and financial statements using DomPDF.',
-        ],
-        metrics: ['100% Automated Webhooks', 'Responsive Mobile-First UI', 'PostgreSQL Relational DB'],
-      },
-    },
   },
   {
     id: 'lab-mmt',
-    title: 'Sistem Informasi Profil Laboratorium Mobile & Multimedia (Lab MMT)',
-    categories: ['Full-Stack Web'],
-    role: {
-      id: 'Full-Stack Web Developer',
-      en: 'Full-Stack Web Developer',
+    title: {
+      id: 'Sistem Informasi Profil Lab Mobile & Multimedia',
+      en: 'Mobile & Multimedia Laboratory Profile Portal',
     },
-    achievementBadge: {
-      id: '🏛️ Portal Laboratorium Polinema',
-      en: '🏛️ Polinema Lab Official Portal',
+    subtitle: {
+      id: 'Proyek Project-Based Learning (PBL)',
+      en: 'Project-Based Learning (PBL)',
+    },
+    year: '2025 – 2026',
+    techStack: ['Laravel', 'Tailwind CSS', 'PostgreSQL'],
+    description: {
+      id: 'Portal profil resmi dan Content Management System (CMS) untuk Laboratorium Mobile dan Multimedia Polinema. Mengembangkan halaman publik responsif, dashboard admin, serta struktur database PostgreSQL untuk mengelola data fasilitas riset, publikasi karya, dan agenda kegiatan lab secara mandiri.',
+      en: 'Official profile portal and CMS for the Mobile and Multimedia Laboratory at Polinema. Developed responsive public pages, a role-protected admin dashboard, and a PostgreSQL relational schema to manage lab facilities, research publications, and schedules dynamically.',
     },
     githubUrl: 'https://github.com/Renyambar/PBL_LabMMT',
-    techStack: ['PHP', 'Laravel', 'Tailwind CSS', 'PostgreSQL', 'CMS Architecture'],
-    description: {
-      id: 'Mengembangkan portal profil resmi dan Content Management System (CMS) untuk menampilkan fasilitas, riset, dan agenda kegiatan Laboratorium Mobile dan Multimedia Politeknik Negeri Malang dengan database relasional PostgreSQL.',
-      en: 'Developed an official profile portal and Content Management System (CMS) to showcase facilities, research outputs, and activities for the Mobile and Multimedia Laboratory at Politeknik Negeri Malang backed by PostgreSQL.',
-    },
-    fullDetails: {
-      id: {
-        overview:
-          'Sistem informasi publik dan manajemen konten internal Laboratorium Mobile & Multimedia Polinema untuk mempublikasikan riset dosen, portofolio mahasiswa, inventaris alat lab, dan jadwal praktikum.',
-        highlights: [
-          'Arsitektur CMS berbasis Laravel dengan kontrol hak akses berbasis peran (RBAC) untuk pengurus lab.',
-          'Penyusunan basis data PostgreSQL dengan integritas relasi tinggi dan manajemen file media upload.',
-          'Desain antarmuka responsif dan modern dengan Tailwind CSS sesuai panduan identitas visual institusi.',
-        ],
-        metrics: ['Production Grade CMS', 'Role-Based Access Control', 'Tailwind CSS Styled'],
-      },
-      en: {
-        overview:
-          'Official portal and Content Management System for the Mobile & Multimedia Laboratory at Polinema, archiving research publications, lab hardware inventory, and lab schedules.',
-        highlights: [
-          'Engineered a scalable Laravel CMS with strict Role-Based Access Control (RBAC) for laboratory managers and administrators.',
-          'Architected PostgreSQL relational schemas with robust referential integrity and secure media uploads.',
-          'Tailored modern responsive layouts with Tailwind CSS honoring institutional visual standards.',
-        ],
-        metrics: ['Production Grade CMS', 'Role-Based Access Control', 'Tailwind CSS Styled'],
-      },
-    },
   },
   {
     id: 'capsee',
-    title: 'CapSee — Proyek Capstone Aplikasi Mobile Berbasis AI',
-    categories: ['AI & Computer Vision'],
-    role: {
-      id: 'Machine Learning & Computer Vision Engineer',
-      en: 'Machine Learning & Computer Vision Engineer',
+    title: {
+      id: 'CapSee – Aplikasi Mobile Berbasis AI',
+      en: 'CapSee – AI-Powered Mobile Application',
     },
-    achievementBadge: {
-      id: '📱 Capstone Project Semester 5',
-      en: '📱 5th-Semester Capstone Project',
+    subtitle: {
+      id: 'Proyek Capstone Semester 5',
+      en: '5th-Semester Capstone Project',
+    },
+    year: '2026 – Sekarang',
+    techStack: ['Python', 'OpenCV', 'PyTorch', 'TensorFlow', 'Google Colab', 'Flutter'],
+    description: {
+      id: 'Proyek kolaborasi aplikasi mobile yang terintegrasi dengan Computer Vision. Bertanggung jawab pada persiapan dataset, pengolahan citra (OpenCV), pelatihan model Deep Learning di Google Colab, serta integrasi inferensi model ke aplikasi Flutter.',
+      en: 'Collaborative capstone project developing an AI-powered mobile application. Handled the ML/Computer Vision pipeline including dataset preparation, image preprocessing with OpenCV, model training on Google Colab, and inference integration with the Flutter client.',
     },
     githubUrl: 'https://github.com/Adhityayusuf/capsee',
-    techStack: ['Python', 'TensorFlow', 'PyTorch', 'OpenCV', 'Google Colab', 'Flutter'],
-    description: {
-      id: 'Merancang arsitektur Machine Learning dan Computer Vision pada proyek kolaborasi tim, mulai dari pengolahan citra (OpenCV), eksperimen pelatihan model di Google Colab, hingga integrasi inferensi model ke aplikasi mobile.',
-      en: 'Designed the Machine Learning and Computer Vision pipeline within a collaborative capstone team, covering image preprocessing with OpenCV, model training in Google Colab, and mobile inference integration.',
-    },
-    fullDetails: {
-      id: {
-        overview:
-          'Aplikasi mobile mutakhir bertenaga computer vision hasil kolaborasi multidisiplin mahasiswa semester 5 untuk solusi pemrosesan citra interaktif langsung dari perangkat smartphone.',
-        highlights: [
-          'Riset dan implementasi preprocessing OpenCV (filtering, resizing, color space transformation) untuk optimasi input model.',
-          'Eksperimen komparatif arsitektur CNN/Vision Transformer di Google Colab menggunakan TensorFlow dan PyTorch.',
-          'Ekspor dan serialisasi model ringan (TFLite / ONNX) untuk eksekusi on-device yang responsif di aplikasi Flutter.',
-        ],
-        metrics: ['On-Device Inference', 'Cross-Platform Mobile Integration', 'Collaborative Git Workflow'],
-      },
-      en: {
-        overview:
-          'AI-powered mobile application engineered during a 5th-semester capstone project, delivering real-time intelligent computer vision processing straight to mobile devices.',
-        highlights: [
-          'Engineered OpenCV preprocessing pipelines (adaptive filtering, spatial normalization) to maximize accuracy.',
-          'Benchmarked deep neural network architectures in Google Colab utilizing both PyTorch and TensorFlow.',
-          'Serialized lightweight on-device models (TFLite / ONNX) for seamless integration with the Flutter frontend.',
-        ],
-        metrics: ['On-Device Inference', 'Cross-Platform Mobile Integration', 'Collaborative Git Workflow'],
-      },
-    },
   },
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
+    id: 'languages',
     title: {
       id: 'Bahasa Pemrograman',
       en: 'Programming Languages',
     },
-    iconName: 'Code2',
-    skills: ['Python', 'PHP', 'JavaScript', 'Java', 'Dart', 'SQL (PostgreSQL)'],
+    focus: {
+      id: 'Pengembangan backend, skrip pemodelan AI/Computer Vision, dan logika aplikasi lintas platform.',
+      en: 'Backend development, AI/Computer Vision scripting, and cross-platform application logic.',
+    },
+    skills: ['Python', 'PHP', 'JavaScript', 'SQL', 'Dart', 'Java', 'C/C++'],
   },
   {
+    id: 'web-mobile',
     title: {
-      id: 'Web & Mobile Development',
-      en: 'Web & Mobile Development',
+      id: 'Pengembangan Web & Mobile',
+      en: 'Web & Mobile Engineering',
     },
-    iconName: 'Layout',
+    focus: {
+      id: 'Arsitektur full-stack MVC, manajemen autentikasi multi-peran (RBAC), integrasi payment gateway, otomatisasi dokumen PDF, dan UI responsif.',
+      en: 'Full-stack MVC architecture, role-based access control (RBAC), payment gateway integration, automated PDF reporting, and responsive UI.',
+    },
     skills: [
-      'Laravel',
+      'Laravel (MVC)',
+      'Django (Fundamental)',
       'Tailwind CSS',
       'HTML5',
       'CSS3',
-      'REST API',
-      'Flutter',
-      'Midtrans API',
+      'Blade Templating',
+      'RESTful API',
+      'Midtrans Payment Gateway API',
       'DomPDF',
+      'Flutter',
     ],
   },
   {
+    id: 'cv-ml',
     title: {
-      id: 'AI, Computer Vision & Robotika',
-      en: 'AI, Computer Vision & Robotics',
+      id: 'Computer Vision & Machine Learning',
+      en: 'Computer Vision & Machine Learning',
     },
-    iconName: 'Cpu',
+    focus: {
+      id: 'Deteksi objek real-time, estimasi koordinat spasial, image preprocessing, ekstraksi frame video, kurasi & anotasi dataset presisi, serta pelatihan dan evaluasi metrik model (mAP, Precision, Recall).',
+      en: 'Real-time object detection, spatial coordinate estimation, image preprocessing, video frame extraction, dataset curation & annotation, and model training/evaluation.',
+    },
     skills: [
-      'YOLOv8',
-      'YOLOv10',
+      'YOLOv8 / YOLOv10',
       'OpenCV',
-      'TensorFlow',
       'PyTorch',
-      'ROS 2 Humble',
-      'TensorRT',
-      'OpenVINO (INT8 Quantization)',
-      'NCNN',
-      'Model Pruning',
+      'TensorFlow',
+      'Scikit-learn (k-NN, CountVectorizer)',
       'Roboflow',
       'Label Studio',
+      'Google Colab',
     ],
   },
   {
+    id: 'robotics-edge',
     title: {
-      id: 'Data & Business Intelligence',
-      en: 'Data & Business Intelligence',
+      id: 'Robotika & Optimasi Edge AI',
+      en: 'Robotics & Edge Deployment',
     },
-    iconName: 'Database',
+    focus: {
+      id: 'Komunikasi node sensor/kamera pada robot otonom, kompresi model deep learning, dan akselerasi inferensi hardware untuk mencapai FPS tinggi pada perangkat edge terbatas.',
+      en: 'Sensor/camera node communication for autonomous robots, deep learning model compression, and hardware inference acceleration for high FPS on edge devices.',
+    },
+    skills: [
+      'ROS 2 Humble',
+      'TensorRT',
+      'Intel OpenVINO (INT8 Quantization)',
+      'NCNN',
+      'ONNX',
+      'Model Pruning',
+      'Custom HMI / Control Display',
+      'NVIDIA Jetson Deployment',
+    ],
+  },
+  {
+    id: 'database-bi',
+    title: {
+      id: 'Basis Data, Data Warehouse & Business Intelligence',
+      en: 'Databases, Data Warehouse & BI',
+    },
+    focus: {
+      id: 'Perancangan skema database relasional, optimasi query SQL, pemrosesan pipeline ETL (Extract, Transform, Load), dan pembuatan dashboard analitik interaktif.',
+      en: 'Relational database schema design, SQL query optimization, ETL pipeline processing, and interactive analytical dashboard creation.',
+    },
     skills: [
       'PostgreSQL',
+      'MySQL',
+      'Relational Database Design (ERD & Normalization)',
       'Data Warehouse (Star Schema)',
-      'ETL (Pentaho Data Integration)',
-      'Power BI',
-      'Data Analysis & Visualization',
+      'Pentaho Data Integration (PDI Spoon / ETL)',
+      'Microsoft Power BI',
     ],
   },
   {
+    id: 'devops-tools',
     title: {
-      id: 'Tools & Sistem Operasi',
-      en: 'Tools & Operating Systems',
+      id: 'DevOps, Sistem Operasi & Perangkat Pengembangan',
+      en: 'DevOps, OS & Development Tools',
     },
-    iconName: 'Terminal',
+    focus: {
+      id: 'Manajemen version control kolaboratif, kontainerisasi lingkungan pengembangan, pengelolaan sistem dual-boot Linux/Windows, dan deployment berkelanjutan.',
+      en: 'Collaborative version control, development environment containerization, Linux/Windows workflow management, and continuous deployment.',
+    },
     skills: [
       'Git',
       'GitHub',
-      'Google Colab',
       'Docker',
-      'Linux (Ubuntu)',
-      'WSL',
-      'VS Code',
+      'Linux (Ubuntu 22.04 LTS)',
+      'Windows Subsystem for Linux (WSL)',
+      'Visual Studio Code',
+      'Laragon',
+      'Vercel (CI/CD)',
+      'Postman',
     ],
   },
 ];
-
-export const WORKFLOW_STEPS: WorkflowStep[] = [
-  {
-    step: '01',
-    title: {
-      id: 'PROBLEM & DATA CURATION',
-      en: 'PROBLEM & DATA CURATION',
-    },
-    desc: {
-      id: 'Analisis kebutuhan sistem secara mendalam, perancangan skema database relasional PostgreSQL atau kurasi & anotasi dataset beresolusi tinggi di Roboflow & Label Studio.',
-      en: 'In-depth system requirement engineering, designing normalized PostgreSQL relational schemas or curating and annotating precision datasets on Roboflow & Label Studio.',
-    },
-    iconName: 'Search',
-  },
-  {
-    step: '02',
-    title: {
-      id: 'ARCHITECTURE & TRAINING',
-      en: 'ARCHITECTURE & TRAINING',
-    },
-    desc: {
-      id: 'Pengembangan arsitektur backend Laravel yang modular / pelatihan model Deep Learning mutakhir (YOLOv8/v10, PyTorch, TensorFlow) dengan akselerasi GPU di Google Colab.',
-      en: 'Architecting modular Laravel backend ecosystems or training cutting-edge Deep Learning models (YOLOv8/v10, PyTorch, TensorFlow) with cloud GPU acceleration in Google Colab.',
-    },
-    iconName: 'Cpu',
-  },
-  {
-    step: '03',
-    title: {
-      id: 'EDGE & API OPTIMIZATION',
-      en: 'EDGE & API OPTIMIZATION',
-    },
-    desc: {
-      id: 'Integrasi REST API pihak ketiga (Midtrans Gateway, DomPDF) serta optimasi inferensi edge via konversi TensorRT, kuantisasi OpenVINO INT8, migrasi NCNN, dan model pruning.',
-      en: 'Integrating production REST APIs (Midtrans, DomPDF) and optimizing edge inference via TensorRT conversion, OpenVINO INT8 quantization, NCNN migration, and model pruning.',
-    },
-    iconName: 'Zap',
-  },
-  {
-    step: '04',
-    title: {
-      id: 'DEPLOYMENT & MONITORING',
-      en: 'DEPLOYMENT & MONITORING',
-    },
-    desc: {
-      id: 'Penerapan pada node ROS 2 Humble dan kontrol HMI robotika, atau deployment web produksi di Vercel/Cloud serta analitik visualisasi metrik dengan Power BI.',
-      en: 'Deploying onto real-time ROS 2 Humble robotics nodes and HMI dashboards, or production web deployment on Vercel/Cloud alongside Power BI metric analytics.',
-    },
-    iconName: 'Radio',
-  },
-];
-
-export const JOURNEY_ITEMS: JourneyItem[] = [
-  {
-    period: {
-      id: '2026 – Sekarang',
-      en: '2026 – Present',
-    },
-    role: {
-      id: 'Research Assistant (Computer Vision & ML)',
-      en: 'Research Assistant (Computer Vision & ML)',
-    },
-    institution: {
-      id: 'Program Hilirisasi Riset — Politeknik Negeri Malang',
-      en: 'Research Downstreaming Program — Politeknik Negeri Malang',
-    },
-    description: {
-      id: 'Sistem Early Warning Perilaku Pegawai pada Command Center institusional berbasis analisis video kecerdasan buatan. Mengelola dataset pengawasan, anotasi akurasi tinggi, serta evaluasi model (NDA).',
-      en: 'Institutional employee behavior early warning system for Command Centers using deep learning video analytics. Leading surveillance data curation, precision annotation, and model evaluation (NDA).',
-    },
-    badge: {
-      id: 'Riset Institusi (NDA)',
-      en: 'Institutional Research (NDA)',
-    },
-    type: 'research',
-  },
-  {
-    period: {
-      id: 'Agu 2025 – Sekarang',
-      en: 'Aug 2025 – Present',
-    },
-    role: {
-      id: 'Software Division (Computer Vision & Edge Deployment)',
-      en: 'Software Division (Computer Vision & Edge Deployment)',
-    },
-    institution: {
-      id: 'Tim Robotika ABUROBONEMA (Finalis Nasional KRAI 2026)',
-      en: 'ABUROBONEMA Robotics Team (National Finalist KRAI 2026)',
-    },
-    description: {
-      id: 'Bertanggung jawab atas arsitektur computer vision robot otonom KRAI. Merancang deteksi objek berbasis YOLOv8, integrasi pub/sub ROS 2 Humble, optimasi INT8 (TensorRT / OpenVINO), serta GUI HMI.',
-      en: 'Responsible for autonomous robot vision architecture for KRAI. Developed YOLOv8 detection nodes, ROS 2 Humble pub/sub pipelines, INT8 optimization (TensorRT / OpenVINO), and operator HMI display.',
-    },
-    badge: {
-      id: '🏆 Finalis Nasional KRAI 2026',
-      en: '🏆 National Finalist KRAI 2026',
-    },
-    type: 'robotics',
-  },
-  {
-    period: {
-      id: 'Agu 2024 – Sekarang',
-      en: 'Aug 2024 – Present',
-    },
-    role: {
-      id: 'Mahasiswa Sarjana Terapan (D4) Teknik Informatika',
-      en: 'Undergraduate of Informatics Engineering (D4)',
-    },
-    institution: {
-      id: 'Politeknik Negeri Malang (Polinema)',
-      en: 'Politeknik Negeri Malang (Polinema)',
-    },
-    description: {
-      id: 'Saat ini menempuh Semester 5 dengan capaian Indeks Prestasi Kumulatif (IPK) 3.70 / 4.00. Fokus pada rekayasa perangkat lunak, sistem basis data relasional, kecerdasan buatan, dan robotika.',
-      en: 'Currently pursuing 5th semester maintaining a Cumulative GPA of 3.70 / 4.00. Specializing in software engineering, relational database architectures, computer vision, and robotics.',
-    },
-    badge: {
-      id: 'IPK: 3.70 / 4.00',
-      en: 'GPA: 3.70 / 4.00',
-    },
-    type: 'education',
-  },
-  {
-    period: {
-      id: 'Jun 2026',
-      en: 'Jun 2026',
-    },
-    role: {
-      id: 'Panitia Divisi Kesekretariatan',
-      en: 'Secretariat Division Committee',
-    },
-    institution: {
-      id: 'Play IT! 2026 — Kompetisi Teknologi Nasional Polinema',
-      en: 'Play IT! 2026 — National Tech Competition Polinema',
-    },
-    description: {
-      id: 'Mengelola tata kelola administrasi kompetisi berskala nasional, koordinasi registrasi peserta antar universitas, penerbitan sertifikasi, dan sinkronisasi arsip penilaian dewan juri.',
-      en: 'Managed official competition logistics and administrative workflows, cross-university contestant coordination, official certification issuance, and jury scoring record synchronization.',
-    },
-    badge: {
-      id: 'Kepengurusan Event Nasional',
-      en: 'National Event Organizer',
-    },
-    type: 'committee',
-  },
-  {
-    period: {
-      id: '2024 – 2025',
-      en: '2024 – 2025',
-    },
-    role: {
-      id: 'Anggota Mini Class Web Development (2 Semester)',
-      en: 'Web Development Mini Class Member (2 Semesters)',
-    },
-    institution: {
-      id: 'Workshop Riset Informatika (WRI) Polinema',
-      en: 'Informatics Research Workshop (WRI) Polinema',
-    },
-    description: {
-      id: 'Menyelesaikan kurikulum intensif 2 semester yang mencakup standar industri web modern: arsitektur REST API, Git version control kolaboratif, clean code, serta framework Laravel & Tailwind CSS.',
-      en: 'Completed an intensive 2-semester curriculum covering modern web development standards: RESTful API design, collaborative Git workflows, clean code practices, and Laravel & Tailwind CSS.',
-    },
-    badge: {
-      id: 'Komunitas Riset Mahasiswa',
-      en: 'Student Research Community',
-    },
-    type: 'organization',
-  },
-];
-
-export const VISION_SHOWCASE_DATA = {
-  raw: {
-    title: {
-      id: 'RAW CAMERA STREAM (UNACCELERATED)',
-      en: 'RAW CAMERA STREAM (UNACCELERATED)',
-    },
-    badge: {
-      id: 'INPUT KAMERA BIASA / PROBLEM',
-      en: 'RAW SENSOR INPUT / BOTTLENECK',
-    },
-    fps: '18.4 FPS',
-    latency: '54.2 ms',
-    precision: 'FP32 Floating Point',
-    memory: '382 MB VRAM',
-    status: {
-      id: 'Bottleneck Komputasi di Edge Device',
-      en: 'Compute Bottleneck on Edge Hardware',
-    },
-    details: {
-      id: 'Model standar FP32 membebani prosesor robot otonom, menyebabkan jeda deteksi dan ketidakstabilan manuver pada kecepatan tinggi.',
-      en: 'Unquantized FP32 models overload lightweight embedded robotic chips, causing navigation latency and unstable high-speed maneuvers.',
-    },
-  },
-  ai: {
-    title: {
-      id: 'YOLOV8 + OPENVINO INT8 & TENSORRT ACCELERATED',
-      en: 'YOLOV8 + OPENVINO INT8 & TENSORRT ACCELERATED',
-    },
-    badge: {
-      id: 'SISTEM INFERENSI CERDAS RENY',
-      en: "RENY'S INTELLIGENT INFERENCE HUD",
-    },
-    fps: '87.6 FPS',
-    latency: '11.4 ms',
-    precision: 'INT8 Quantized Engine',
-    memory: '98 MB VRAM (-74%)',
-    status: {
-      id: 'ROS 2 Humble Node: CONNECTED [active]',
-      en: 'ROS 2 Humble Node: CONNECTED [active]',
-    },
-    speedup: '3.8x REAL-TIME SPEEDUP',
-    details: {
-      id: 'Melalui kuantisasi INT8, pruning model, dan migrasi TensorRT/NCNN, inferensi menjadi ultra-cepat dengan akurasi mAP95 terjaga optimal.',
-      en: 'Through INT8 quantization, pruning, and TensorRT/NCNN engine compilation, inference is ultra-fast while sustaining peak mAP95 accuracy.',
-    },
-    detections: [
-      {
-        label: 'Robot Target #01',
-        conf: '98.4%',
-        box: 'top-[22%] left-[18%] w-[28%] h-[45%]',
-        color: 'border-maroon-500 bg-maroon-900/20 text-maroon-400',
-        badgeColor: 'bg-maroon-600 text-white',
-      },
-      {
-        label: 'Arena Goal Post',
-        conf: '96.2%',
-        box: 'top-[15%] right-[16%] w-[26%] h-[56%]',
-        color: 'border-emerald-500 bg-emerald-950/20 text-emerald-400',
-        badgeColor: 'bg-emerald-600 text-white',
-      },
-      {
-        label: 'Ball Silo Object',
-        conf: '94.8%',
-        box: 'bottom-[12%] left-[44%] w-[20%] h-[24%]',
-        color: 'border-amber-500 bg-amber-950/20 text-amber-400',
-        badgeColor: 'bg-amber-600 text-white',
-      },
-    ],
-  },
-};
-
-export const CONTACT_TOPICS = [
-  {
-    id: 'internship',
-    label: {
-      id: '💼 Tawaran Magang (Internship)',
-      en: '💼 Internship Opportunity',
-    },
-  },
-  {
-    id: 'web-dev',
-    label: {
-      id: '🌐 Proyek Web Full-Stack (Laravel/PostgreSQL)',
-      en: '🌐 Full-Stack Web Development',
-    },
-  },
-  {
-    id: 'ai-cv',
-    label: {
-      id: '🤖 Riset / Proyek AI & Computer Vision',
-      en: '🤖 AI & Computer Vision Project',
-    },
-  },
-  {
-    id: 'collaboration',
-    label: {
-      id: '💬 Kolaborasi & Diskusi Terbuka',
-      en: '💬 General Collaboration & Discussion',
-    },
-  },
-];
-

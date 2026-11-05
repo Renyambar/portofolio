@@ -11,7 +11,8 @@ export default {
         bg: {
           primary: 'var(--bg-primary)',
           secondary: 'var(--bg-secondary)',
-          tertiary: 'var(--bg-tertiary)',
+          card: 'var(--bg-card)',
+          arch: 'var(--arch-bg)',
         },
         fg: {
           primary: 'var(--text-primary)',
@@ -20,68 +21,29 @@ export default {
         },
         accent: {
           primary: 'var(--accent-primary)',
-          secondary: 'var(--accent-secondary)',
-          glow: 'var(--accent-glow)',
+          hover: 'var(--accent-hover)',
         },
         surface: {
           border: 'var(--border-color)',
-          card: 'var(--card-bg)',
-          cardHover: 'var(--card-hover)',
+          card: 'var(--bg-card)',
+          cardBorder: 'var(--card-border)',
         },
-        maroon: {
-          50: '#FDF2F4',
-          100: '#FBE4E7',
-          200: '#F5CBD2',
-          300: '#ECA4AF',
-          400: '#DE7083',
-          500: '#B83246',
-          600: '#9E2A3B',
-          700: '#7A1C29',
-          800: '#641722',
-          900: '#4D121B',
-          950: '#2C060C',
-        },
-        cream: {
-          50: '#FAF6F0',
-          100: '#F5ECE0',
-          200: '#F2EAE0',
-          300: '#E8DCCF',
-          400: '#E2D6C8',
-          500: '#D5C4B1',
-        },
-        obsidian: {
-          800: '#2A2023',
-          850: '#1F191B',
-          900: '#171214',
-          950: '#0D0B0C',
+        editorial: {
+          maroon: '#7C1D2D',
+          crimson: '#A8283D',
+          charcoal: '#181616',
+          paper: '#FAF7F2',
+          cardLight: '#FFFFFF',
+          cardDark: '#1A1818',
         }
       },
       fontFamily: {
-        display: ['Syne', 'Plus Jakarta Sans', 'sans-serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
+        sans: ['"Inter"', '"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
-      animation: {
-        'marquee-left': 'marquee-left 32s linear infinite',
-        'marquee-right': 'marquee-right 32s linear infinite',
-        'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
-      },
-      keyframes: {
-        'marquee-left': {
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        'marquee-right': {
-          '0%': { transform: 'translateX(-50%)' },
-          '100%': { transform: 'translateX(0%)' },
-        },
-        'pulse-subtle': {
-          '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.7', transform: 'scale(1.05)' },
-        }
-      }
     },
   },
   plugins: [],
 }
-

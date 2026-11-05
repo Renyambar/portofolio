@@ -1,95 +1,30 @@
 export type Language = 'id' | 'en';
 export type Theme = 'light' | 'dark';
 
-export interface Project {
+export interface ExperienceItem {
   id: string;
-  title: string;
-  categories: Array<'AI & Computer Vision' | 'Full-Stack Web' | 'Robotics & Edge AI'>;
-  role: {
-    id: string;
-    en: string;
-  };
-  achievementBadge?: {
-    id: string;
-    en: string;
-  };
-  githubUrl?: string;
+  role: { id: string; en: string };
+  institution: { id: string; en: string };
+  period: { id: string; en: string };
+  badge?: { id: string; en: string };
+  description: { id: string; en: string };
+  repoUrl?: string;
   isNda?: boolean;
-  demoUrl?: string;
+}
+
+export interface ProjectItem {
+  id: string;
+  title: { id: string; en: string };
+  subtitle: { id: string; en: string };
+  year: string;
   techStack: string[];
-  description: {
-    id: string;
-    en: string;
-  };
-  fullDetails?: {
-    id: {
-      overview: string;
-      highlights: string[];
-      metrics: string[];
-    };
-    en: {
-      overview: string;
-      highlights: string[];
-      metrics: string[];
-    };
-  };
+  description: { id: string; en: string };
+  githubUrl: string;
 }
 
 export interface SkillCategory {
-  title: {
-    id: string;
-    en: string;
-  };
-  iconName: string;
+  id: string;
+  title: { id: string; en: string };
+  focus: { id: string; en: string };
   skills: string[];
 }
-
-export interface WorkflowStep {
-  step: string;
-  title: {
-    id: string;
-    en: string;
-  };
-  desc: {
-    id: string;
-    en: string;
-  };
-  iconName: string;
-}
-
-export interface JourneyItem {
-  period: {
-    id: string;
-    en: string;
-  };
-  role: {
-    id: string;
-    en: string;
-  };
-  institution: {
-    id: string;
-    en: string;
-  };
-  description: {
-    id: string;
-    en: string;
-  };
-  badge?: {
-    id: string;
-    en: string;
-  };
-  type: 'research' | 'robotics' | 'education' | 'committee' | 'organization';
-}
-
-export interface StatItem {
-  value: string;
-  label: {
-    id: string;
-    en: string;
-  };
-  sublabel: {
-    id: string;
-    en: string;
-  };
-}
-
