@@ -15,8 +15,8 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     if (saved === 'light' || saved === 'dark') {
       return saved;
     }
-    // Default to Light Mode as specified in rebuild.md
-    return 'light';
+    // Default to Dark Mode as specified in rebuild.md (Renando Dark Maroon Studio)
+    return 'dark';
   });
 
   useEffect(() => {

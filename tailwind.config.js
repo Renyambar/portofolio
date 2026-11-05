@@ -12,7 +12,6 @@ export default {
           primary: 'var(--bg-primary)',
           secondary: 'var(--bg-secondary)',
           card: 'var(--bg-card)',
-          arch: 'var(--arch-bg)',
         },
         fg: {
           primary: 'var(--text-primary)',
@@ -28,20 +27,18 @@ export default {
           card: 'var(--bg-card)',
           cardBorder: 'var(--card-border)',
         },
-        editorial: {
-          maroon: '#7C1D2D',
-          crimson: '#A8283D',
-          charcoal: '#181616',
-          paper: '#FAF7F2',
-          cardLight: '#FFFFFF',
-          cardDark: '#1A1818',
+        studio: {
+          black: '#0A0909',
+          cardDark: '#121010',
+          crimson: '#BE123C',
+          deepMaroon: '#7C1D2D',
+          paperLight: '#F7F3EB',
         }
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Plus Jakarta Sans"', '"Inter"', 'sans-serif'],
-        sans: ['"Inter"', '"Plus Jakarta Sans"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        display: ['Syne', 'Plus Jakarta Sans', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
     },
   },
