@@ -11,7 +11,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>(() => {
-    const saved = localStorage.getItem('minipaoo_theme');
+    const saved = localStorage.getItem('reny_theme');
     if (saved === 'light' || saved === 'dark') {
       return saved;
     }
@@ -28,7 +28,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.remove('dark');
       root.classList.add('light');
     }
-    localStorage.setItem('minipaoo_theme', theme);
+    localStorage.setItem('reny_theme', theme);
   }, [theme]);
 
   const toggleTheme = () => {

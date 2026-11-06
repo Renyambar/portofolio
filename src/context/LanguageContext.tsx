@@ -12,7 +12,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem('minipaoo_lang');
+    const saved = localStorage.getItem('reny_lang');
     if (saved === 'id' || saved === 'en') {
       return saved;
     }
@@ -21,7 +21,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   useEffect(() => {
     document.documentElement.lang = language;
-    localStorage.setItem('minipaoo_lang', language);
+    localStorage.setItem('reny_lang', language);
   }, [language]);
 
   const toggleLanguage = () => {

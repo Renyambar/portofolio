@@ -3,15 +3,15 @@ import { ProjectItem, ExperienceItem, MilestoneItem } from '../types';
 export const PERSONAL_INFO = {
   name: 'RENY AMBARWATI.',
   greeting: "Hello, I'm",
-  nickname: 'minipaoo',
-  brand: 'MINIPAOO®',
+  brand: 'RENY AMBARWATI',
   metaTopLeft: 'FULL-STACK & AI ENGINEER',
+  metaTopSub: 'SYSTEM BUILDER',
   metaTopCenter: {
     id: 'AVAILABLE FOR INTERNSHIP',
     en: 'AVAILABLE FOR INTERNSHIP',
   },
   metaTopRight: 'MALANG, INDONESIA ✳',
-  subRole: 'FULL-STACK WEB & COMPUTER VISION',
+  subRole: 'FULL-STACK & COMPUTER VISION',
   heroNarrative: {
     id: 'Membangun sistem. Menciptakan solusi cerdas. Saya mengubah kebutuhan bisnis dan data visual menjadi aplikasi web dan model AI yang bekerja nyata.',
     en: 'Engineering systems. Building intelligent vision. I turn complex requirements and visual data into production-ready web apps and AI models.',
@@ -48,11 +48,13 @@ export const PERSONAL_INFO = {
   githubHandle: 'github.com/Renyambar',
   linkedinUrl: 'https://linkedin.com/in/renyambarwati',
   linkedinHandle: 'linkedin.com/in/renyambarwati',
+  instagramUrl: 'https://instagram.com/ambarny_wt',
+  instagramHandle: 'instagram.com/ambarny_wt',
   basedIn: {
     id: 'Malang, Jawa Timur, Indonesia (Siap Onsite / Hybrid / Remote)',
     en: 'Malang, East Java, Indonesia (Open for Onsite / Hybrid / Remote)',
   },
-  domain: 'minipaoo.web.id',
+  domain: 'renyambarwati.dev',
 };
 
 export const NAV_LINKS = [
@@ -555,8 +557,8 @@ export const MILESTONES: MilestoneItem[] = [
   {
     index: '03',
     title: {
-      id: 'IPK 3.70 / 4.00 D4 TI Polinema',
-      en: 'GPA 3.70 / 4.00 Informatics Polinema',
+      id: 'IPK 3.70 / 4.00 D4 Teknik Informatika',
+      en: 'GPA 3.70 / 4.00 Informatics Engineering',
     },
     year: '2024–2026',
   },

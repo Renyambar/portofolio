@@ -12,11 +12,11 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 bg-bg-primary/95 backdrop-blur-md border-b border-surface-border transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          {/* Kiri: MINIPAOO® */}
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18">
+          {/* Kiri: RENY AMBARWATI */}
           <a
             href="#"
-            className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-fg-primary hover:text-accent-primary transition-colors flex items-center gap-1"
+            className="font-sans font-bold text-base sm:text-lg tracking-tight text-fg-primary hover:text-accent-primary transition-colors flex items-center gap-1 shrink-0"
           >
             <span>{PERSONAL_INFO.brand}</span>
           </a>

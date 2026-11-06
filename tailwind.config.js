@@ -36,7 +36,9 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Syne', 'Plus Jakarta Sans', 'sans-serif'],
+        display: ['Oswald', 'Plus Jakarta Sans', 'sans-serif'],
+        condensed: ['Oswald', 'sans-serif'],
+        cursive: ['Caveat', 'cursive'],
         sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
