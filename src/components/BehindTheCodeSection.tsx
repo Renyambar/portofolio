@@ -30,18 +30,18 @@ export const BehindTheCodeSection: React.FC = () => {
     <section id="about" className="py-14 sm:py-20 md:py-24 border-b border-surface-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         {/* Main Section Header */}
-        <div className="space-y-3 max-w-3xl">
+        <div className="space-y-4 max-w-3xl">
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary block">
-            02 / BEHIND THE CODE
+            01 / {language === 'id' ? 'TENTANG SAYA' : 'ABOUT ME'}
           </span>
-          <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-fg-primary tracking-tight uppercase leading-snug">
-            {language === 'id'
-              ? 'BUKAN SEKADAR BARIS KODE. TAPI SOLUSI YANG BEKERJA.'
-              : 'MORE THAN JUST CODE. ENGINEERED TO WORK.'}
+          <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-fg-primary tracking-tight leading-snug">
+            {BEHIND_THE_CODE.title[language]}
           </h2>
-          <p className="text-sm sm:text-base text-fg-secondary leading-relaxed font-normal">
-            {BEHIND_THE_CODE.narrative[language]}
-          </p>
+          <div className="space-y-3.5 text-sm sm:text-base text-fg-secondary leading-relaxed font-normal">
+            {BEHIND_THE_CODE.paragraphs[language].map((paragraph, idx) => (
+              <p key={idx}>{paragraph}</p>
+            ))}
+          </div>
         </div>
 
         {/* 1: EDUCATION & TRAINING */}

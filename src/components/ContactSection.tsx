@@ -137,7 +137,7 @@ export const ContactSection: React.FC = () => {
                   CURRICULUM VITAE
                 </span>
                 <span className="font-mono text-xs sm:text-sm text-fg-primary group-hover:text-accent-primary transition-colors truncate block font-medium">
-                  {language === 'id' ? 'Lihat CV di Google Drive' : 'View CV on Google Drive'}
+                  {language === 'id' ? 'Lihat CV' : 'View CV'}
                 </span>
               </div>
             </div>

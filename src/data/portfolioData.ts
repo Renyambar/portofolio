@@ -4,14 +4,13 @@ export const PERSONAL_INFO = {
   name: 'RENY AMBARWATI.',
   greeting: "Hello, I'm",
   brand: 'RENY AMBARWATI',
-  metaTopLeft: 'FULL-STACK & AI ENGINEER',
-  metaTopSub: 'SYSTEM BUILDER',
+  metaTopLeft: 'FULL-STACK WEB & ML/Computer Vision ENGINEER',
   metaTopCenter: {
-    id: 'AVAILABLE FOR INTERNSHIP',
-    en: 'AVAILABLE FOR INTERNSHIP',
+    id: 'AVAILABLE FOR COLLABORATION',
+    en: 'AVAILABLE FOR COLLABORATION',
   },
-  metaTopRight: 'MALANG, INDONESIA ✳',
-  subRole: 'FULL-STACK & COMPUTER VISION',
+  metaTopRight: 'MALANG, INDONESIA',
+  subRole: 'FULL-STACK WEB DEVELOPER & COMPUTER VISION',
   heroNarrative: {
     id: 'Membangun sistem. Menciptakan solusi cerdas. Saya mengubah kebutuhan bisnis dan data visual menjadi aplikasi web dan model AI yang bekerja nyata.',
     en: 'Engineering systems. Building intelligent vision. I turn complex requirements and visual data into production-ready web apps and AI models.',
@@ -20,47 +19,40 @@ export const PERSONAL_INFO = {
     {
       value: '3.70',
       label: {
-        id: 'IPK D4 TEKNIK INFORMATIKA POLINEMA',
-        en: 'CURRENT GPA D4 INFORMATICS POLINEMA',
+        id: 'IPK D4 TEKNIK INFORMATIKA',
+        en: 'CURRENT GPA D4 INFORMATICS',
       },
     },
     {
       value: '4+',
       label: {
-        id: 'PROYEK WEB, AI & ROBOTIKA',
-        en: 'WEB, AI & ROBOTICS PROJECTS',
-      },
-    },
-    {
-      value: 'FINALIS',
-      label: {
-        id: 'KRAI NASIONAL 2026',
-        en: 'KRAI 2026 NATIONAL FINALIST',
+        id: 'PROYEK WEB, MOBILE & ROBOTIKA',
+        en: 'WEB, MOBILE & ROBOTICS PROJECTS',
       },
     },
   ],
-  cvGdriveUrl: 'https://drive.google.com/file/d/ISI_LINK_GDRIVE_CV_DISINI/view?usp=sharing',
+  cvGdriveUrl: 'https://drive.google.com/file/d/11a3tS9ziYoDESwsthYmG3Z5fGilTXwVX/view?usp=sharing',
   profileImage: '/profile.png',
   email: 'ambarwatireny73@gmail.com',
   whatsappNumber: '+62 857-9847-5896',
   whatsappUrl: 'https://wa.me/6285798475896',
   githubUrl: 'https://github.com/Renyambar',
   githubHandle: 'github.com/Renyambar',
-  linkedinUrl: 'https://linkedin.com/in/renyambarwati',
+  linkedinUrl: 'www.linkedin.com/in/reny-ambarwati-747744323',
   linkedinHandle: 'linkedin.com/in/renyambarwati',
   instagramUrl: 'https://instagram.com/ambarny_wt',
   instagramHandle: 'instagram.com/ambarny_wt',
   basedIn: {
-    id: 'Malang, Jawa Timur, Indonesia (Siap Onsite / Hybrid / Remote)',
-    en: 'Malang, East Java, Indonesia (Open for Onsite / Hybrid / Remote)',
+    id: 'Malang, Jawa Timur, Indonesia',
+    en: 'Malang, East Java, Indonesia',
   },
   domain: 'renyambarwati.dev',
 };
 
 export const NAV_LINKS = [
-  { href: '#works', label: { id: 'Karya', en: 'Works' } },
   { href: '#about', label: { id: 'Tentang', en: 'About' } },
-  { href: '#journey', label: { id: 'Perjalanan', en: 'Journey' } },
+  { href: '#works', label: { id: 'Proyek', en: 'Projects' } },
+  { href: '#journey', label: { id: 'Pengalaman', en: 'Experiences' } },
   { href: '#skills', label: { id: 'Keahlian', en: 'Skills' } },
   { href: '#contact', label: { id: 'Kontak', en: 'Contact' } },
 ];
@@ -85,21 +77,21 @@ export const PROJECTS: ProjectItem[] = [
     },
     gallery: [
       {
-        src: '/projects/skillkul-1.jpg',
+        src: '/projects/skillkul/1.png',
         caption: {
           id: 'Landing Page & Katalog Jasa Mahasiswa',
           en: 'Landing Page & Student Services Catalog',
         },
       },
       {
-        src: '/projects/skillkul-2.jpg',
+        src: '/projects/skillkul/2.png',
         caption: {
           id: 'Integrasi REST API Midtrans Payment Gateway',
           en: 'Midtrans Payment Gateway REST API Integration',
         },
       },
       {
-        src: '/projects/skillkul-3.jpg',
+        src: '/projects/skillkul/3.png',
         caption: {
           id: 'Dashboard Pesanan & Cetak Invoice PDF DomPDF',
           en: 'Order Dashboard & Dynamic DomPDF Invoice Generation',
@@ -144,21 +136,21 @@ export const PROJECTS: ProjectItem[] = [
     },
     gallery: [
       {
-        src: '/projects/labmmt-1.jpg',
+        src: '/projects/labmmt/1.png',
         caption: {
           id: 'Halaman Utama Portal Lab MMT Responsif',
           en: 'Responsive Lab MMT Official Public Portal',
         },
       },
       {
-        src: '/projects/labmmt-2.jpg',
+        src: '/projects/labmmt/2.png',
         caption: {
           id: 'Katalog Publikasi Riset & Inventaris Fasilitas',
           en: 'Research Publication Catalog & Lab Hardware Inventory',
         },
       },
       {
-        src: '/projects/labmmt-3.jpg',
+        src: '/projects/labmmt/3.png',
         caption: {
           id: 'Dashboard CMS Administrator Terproteksi (RBAC)',
           en: 'Role-Protected Admin CMS Dashboard (RBAC)',
@@ -201,21 +193,21 @@ export const PROJECTS: ProjectItem[] = [
     },
     gallery: [
       {
-        src: '/projects/capsee-1.jpg',
+        src: '/projects/capsee/1.png',
         caption: {
           id: 'Antarmuka Aplikasi Mobile Flutter',
           en: 'Cross-Platform Flutter Mobile Client',
         },
       },
       {
-        src: '/projects/capsee-2.jpg',
+        src: '/projects/capsee/2.png',
         caption: {
           id: 'Pipeline Preprocessing Citra OpenCV',
           en: 'OpenCV Image Preprocessing Pipeline',
         },
       },
       {
-        src: '/projects/capsee-3.jpg',
+        src: '/projects/capsee/3.png',
         caption: {
           id: 'Hasil Evaluasi & Deteksi Model Deep Learning',
           en: 'Deep Learning Model Evaluation & Visual Inference',
@@ -258,21 +250,21 @@ export const PROJECTS: ProjectItem[] = [
     },
     gallery: [
       {
-        src: '/projects/krai-1.jpg',
+        src: '/projects/krai/1.png',
         caption: {
           id: 'Deteksi Objek Real-Time YOLOv8 di Lapangan Pertandingan',
           en: 'Real-Time YOLOv8 Field Object Detection',
         },
       },
       {
-        src: '/projects/krai-2.jpg',
+        src: '/projects/krai/2.png',
         caption: {
           id: 'Antarmuka Kontrol HMI Operator Robot',
           en: 'Custom Operator HMI Control Interface',
         },
       },
       {
-        src: '/projects/krai-3.jpg',
+        src: '/projects/krai/3.png',
         caption: {
           id: 'Pengujian Komparasi FPS & Kuantisasi INT8 Edge Device',
           en: 'Edge Device FPS Benchmark & INT8 Quantization Matrix',
@@ -299,9 +291,25 @@ export const PROJECTS: ProjectItem[] = [
 ];
 
 export const BEHIND_THE_CODE = {
+  title: {
+    id: 'Profil & Fokus Pengembangan.',
+    en: 'Profile & Engineering Focus.',
+  },
+  paragraphs: {
+    id: [
+      'Saya Reny Ambarwati, mahasiswa semester 5 Program Studi D4 Teknik Informatika di Politeknik Negeri Malang. Fokus utama saya berada pada persimpangan antara rekayasa perangkat lunak berbasis web dan pengembangan sistem kecerdasan buatan, khususnya di bidang visi komputer (Computer Vision).',
+      'Dalam pengembangan perangkat lunak, saya terbiasa merancang dan membangun sistem secara menyeluruh—mulai dari pemodelan struktur basis data, penyusunan logika bisnis di sisi belakang layar, hingga pembuatan antarmuka yang intuitif dan siap memenuhi kebutuhan operasional pengguna.',
+      'Di luar pengembangan aplikasi web, saya aktif melakukan riset dan implementasi sistem persepsi visual untuk robot otonom di tim robotika kampus hingga tingkat nasional, serta berkontribusi sebagai asisten peneliti dalam proyek analisis video pintar. Pengalaman menangani berbagai proyek dari tahap perancangan hingga implementasi lapangan membentuk cara kerja saya yang terstruktur, adaptif, dan berorientasi pada solusi nyata.',
+    ],
+    en: [
+      'I am Reny Ambarwati, a 5th-semester Applied Bachelor student in Informatics Engineering at Politeknik Negeri Malang. My core focus lies at the intersection of full-stack web engineering and artificial intelligence, specifically within the field of Computer Vision.',
+      'In software development, I am accustomed to building systems end-to-end—from designing structured relational databases and backend business logic to crafting clean, responsive interfaces tailored to real operational needs.',
+      'Beyond web applications, I actively develop visual perception systems for autonomous robots in national-level competitions and contribute as a research assistant on intelligent video analytics projects. Working across both software architecture and field deployment has shaped my ability to solve technical problems systematically, adapt quickly, and deliver reliable solutions.',
+    ],
+  },
   narrative: {
-    id: 'Saya Reny Ambarwati, mahasiswa semester 5 D4 Teknik Informatika di Politeknik Negeri Malang (IPK 3.70/4.00). Saya bekerja di persimpangan antara pengembangan aplikasi web full-stack (Laravel, Python, PostgreSQL) dan kecerdasan buatan/visi komputer (YOLOv8, ROS 2, Edge AI), menggabungkan arsitektur backend yang terstruktur dengan komputasi cerdas.',
-    en: 'I\'m Reny Ambarwati, a 5th-semester Informatics Engineering student at Politeknik Negeri Malang (GPA 3.70/4.00). I work at the intersection of full-stack web engineering (Laravel, Python, PostgreSQL) and computer vision/AI (YOLOv8, ROS 2, Edge AI), combining structured backend architecture with real-time intelligent computing.',
+    id: 'Saya Reny Ambarwati, mahasiswa semester 5 Program Studi D4 Teknik Informatika di Politeknik Negeri Malang. Fokus utama saya berada pada persimpangan antara rekayasa perangkat lunak berbasis web dan pengembangan sistem kecerdasan buatan, khususnya di bidang visi komputer (Computer Vision).',
+    en: 'I am Reny Ambarwati, a 5th-semester Applied Bachelor student in Informatics Engineering at Politeknik Negeri Malang. My core focus lies at the intersection of full-stack web engineering and artificial intelligence, specifically within the field of Computer Vision.',
   },
   education: [
     {
@@ -333,7 +341,7 @@ export const BEHIND_THE_CODE = {
     {
       id: 'languages',
       title: { id: 'Bahasa Pemrograman', en: 'Programming Languages' },
-      skills: ['Python', 'PHP', 'JavaScript', 'SQL', 'Dart', 'Java', 'C/C++'],
+      skills: ['Python', 'PHP', 'JavaScript', 'SQL', 'Dart', 'Java', 'C++'],
     },
     {
       id: 'web-mobile',
@@ -366,11 +374,11 @@ export const BEHIND_THE_CODE = {
     },
     {
       id: 'robotics-edge',
-      title: { id: 'Robotics & Edge AI Optimization', en: 'Robotics & Edge AI Optimization' },
+      title: { id: 'Robotics & Model Optimization', en: 'Robotics & Model Optimization' },
       skills: [
         'ROS 2 Humble',
         'TensorRT',
-        'Intel OpenVINO (INT8 Quantization)',
+        'Intel OpenVINO',
         'NCNN',
         'ONNX',
         'Model Pruning',
@@ -384,8 +392,8 @@ export const BEHIND_THE_CODE = {
         'PostgreSQL',
         'MySQL',
         'ERD & Relational Schema',
-        'Data Warehouse (Star Schema)',
-        'Pentaho Data Integration (ETL)',
+        'Data Warehouse',
+        'Pentaho Data Integration',
         'Microsoft Power BI',
       ],
     },
@@ -397,7 +405,6 @@ export const BEHIND_THE_CODE = {
         'GitHub',
         'Docker',
         'Linux (Ubuntu 22.04)',
-        'WSL',
         'VS Code',
         'Laragon',
         'Vercel CI/CD',
@@ -493,17 +500,17 @@ export const EXPERIENCES: ExperienceItem[] = [
       en: 'ABUROBONEMA Robotics Team Polinema',
     },
     badge: {
-      id: 'Finalis Nasional KRAI 2026',
-      en: 'National Finalist KRAI 2026',
+      id: 'KRAI Tingkat Nasional 2026',
+      en: 'National KRAI 2026',
     },
     repoUrl: 'https://github.com/Renyambar/abu-riset',
     points: {
       id: [
-        'Finalis Tingkat Nasional Kontes Robot ABU Indonesia (KRAI) 2026.',
+        'Lolos Tingkat Nasional Kontes Robot ABU Indonesia (KRAI) 2026.',
         'Mengembangkan deteksi objek real-time dengan YOLOv8 terintegrasi ROS 2 Humble, membangun display kontrol HMI, serta mengoptimasi inferensi model pada edge device menggunakan TensorRT, NCNN, OpenVINO INT8, dan model pruning.',
       ],
       en: [
-        'National Finalist of Kontes Robot ABU Indonesia (KRAI) 2026.',
+        'Qualified for National Level Kontes Robot ABU Indonesia (KRAI) 2026.',
         'Engineered real-time object detection with YOLOv8 connected to ROS 2 Humble nodes, developed an operator HMI control display, and optimized edge model throughput via TensorRT, NCNN, OpenVINO INT8, and pruning.',
       ],
     },
@@ -511,8 +518,8 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'playit-committee',
     period: {
-      id: 'JUN 2026',
-      en: 'JUN 2026',
+      id: 'JUNI 2026',
+      en: 'JUNE 2026',
     },
     role: {
       id: 'Panitia Divisi Kesekretariatan',

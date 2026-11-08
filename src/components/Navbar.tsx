@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Sun, Moon, Menu, X, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
-import { PERSONAL_INFO, NAV_LINKS } from '../data/portfolioData';
+import { NAV_LINKS } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
   const { language, toggleLanguage } = useLanguage();
@@ -12,22 +12,17 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 bg-bg-primary/95 backdrop-blur-md border-b border-surface-border transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18">
-          {/* Kiri: RENY AMBARWATI */}
-          <a
-            href="#"
-            className="font-sans font-bold text-base sm:text-lg tracking-tight text-fg-primary hover:text-accent-primary transition-colors flex items-center gap-1 shrink-0"
-          >
-            <span>{PERSONAL_INFO.brand}</span>
-          </a>
+        <div className="relative flex items-center justify-between h-14 sm:h-16 md:h-18">
+          {/* Pojok kiri kosong (sesuai request user: pojok kiri kosong gapapa) */}
+          <div className="hidden md:block w-8" aria-hidden="true" />
 
-          {/* Tengah: Link navigasi bersih */}
-          <nav className="hidden md:flex items-center space-x-8">
+          {/* Navigasi di tengah presisi */}
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8 absolute left-1/2 -translate-x-1/2">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-mono text-xs uppercase tracking-wider text-fg-secondary hover:text-fg-primary transition-colors"
+                className="font-mono text-xs uppercase tracking-wider text-fg-secondary hover:text-accent-primary transition-colors font-medium"
               >
                 {link.label[language]}
               </a>
@@ -35,7 +30,7 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Kanan: Language, Theme, dan Pill Button 'Let's talk ↗' */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 ml-auto">
             {/* Language Switcher */}
             <button
               onClick={toggleLanguage}

@@ -30,7 +30,7 @@ export const ProjectsSection: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-5 border-b border-surface-border">
           <div className="space-y-1.5">
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary block">
-              01 / SELECTED WORK
+              02 / {language === 'id' ? 'KARYA PILIHAN' : 'SELECTED WORK'}
             </span>
             <h2 className="font-sans font-extrabold text-2xl sm:text-3xl md:text-4xl text-fg-primary tracking-tight uppercase">
               {language === 'id' ? 'KARYA & SISTEM PILIHAN.' : 'SELECTED WORKS.'}

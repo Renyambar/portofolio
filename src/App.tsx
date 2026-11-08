@@ -12,8 +12,8 @@ export const App: React.FC = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <ProjectsSection />
         <BehindTheCodeSection />
+        <ProjectsSection />
         <JourneySection />
       </main>
       <ContactSection />

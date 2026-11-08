@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowDown, ArrowUpRight, MapPin, Sparkles } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { PERSONAL_INFO } from '../data/portfolioData';
+import { GithubIcon } from './Icons';
 
 export const HeroSection: React.FC = () => {
   const { language } = useLanguage();
@@ -16,9 +17,11 @@ export const HeroSection: React.FC = () => {
             <span className="text-accent-primary font-bold">
               {PERSONAL_INFO.metaTopLeft}
             </span>
-            <span className="text-fg-muted text-[11px]">
-              {PERSONAL_INFO.metaTopSub}
-            </span>
+            {'metaTopSub' in PERSONAL_INFO && Boolean((PERSONAL_INFO as any).metaTopSub) && (
+              <span className="text-fg-muted text-[11px]">
+                {(PERSONAL_INFO as any).metaTopSub}
+              </span>
+            )}
           </div>
 
           {/* Top Right: Status Badge */}
@@ -138,14 +141,18 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
 
-              {/* Stat 3: Prestasi */}
-              <div>
-                <span className="font-condensed font-bold text-2xl sm:text-3xl text-accent-primary tracking-tight block leading-none">
-                  {PERSONAL_INFO.heroStats[2].value}
-                </span>
-                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-wider text-fg-secondary block mt-1">
-                  {PERSONAL_INFO.heroStats[2].label[language]}
-                </span>
+              {/* Button ke GitHub Saya */}
+              <div className="pt-1">
+                <a
+                  href={PERSONAL_INFO.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-surface-border bg-bg-card hover:border-accent-primary/60 hover:bg-bg-secondary text-fg-primary text-xs font-mono font-bold transition-all group shadow-sm"
+                >
+                  <GithubIcon className="w-4 h-4 text-accent-primary group-hover:scale-110 transition-transform" />
+                  <span>{language === 'id' ? 'Buka GitHub Saya' : 'Visit My GitHub'}</span>
+                  <ArrowUpRight className="w-3.5 h-3.5 text-accent-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
               </div>
             </div>
           </div>
@@ -168,7 +175,7 @@ export const HeroSection: React.FC = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-fg-secondary hover:text-accent-primary transition-colors font-medium uppercase tracking-wider text-[11px] group"
           >
-            <span>{language === 'id' ? 'LIHAT CV (GOOGLE DRIVE)' : 'VIEW CV (GOOGLE DRIVE)'}</span>
+            <span>{language === 'id' ? 'LIHAT CV' : 'VIEW CV'}</span>
             <ArrowUpRight className="w-3.5 h-3.5 text-accent-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
